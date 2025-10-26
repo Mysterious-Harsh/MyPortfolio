@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projects - Harsh Patel</title>
+		<meta
+			name="description"
+			content="Explore my portfolio of data science projects including machine learning, deep learning, computer vision, and NLP applications."
+		/>
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Core Libraries -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+		<!-- Color Manager -->
+		<script src="color-manager.js"></script>
+
+		<!-- Background Selector -->
+		<!-- <script src="background-selector.js"></script> -->
+		<!-- Background System -->
+		<script src="background-system.js"></script>
+
+		<style>
+			/* Import base styles */
+			:root {
+				--primary-bg: #0a0a0a;
+				--secondary-bg: #1a1a1a;
+				--accent-color: #0066ff;
+				--text-primary: #ffffff;
+				--text-secondary: #6b7280;
+				--success-color: #10b981;
+				--border-color: #333333;
+				--gradient-primary: linear-gradient(
+					135deg,
+					var(--accent-color),
+					#00ccff
+				);
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Inter", sans-serif;
+				background: var(--primary-bg);
+				color: var(--text-primary);
+				line-height: 1.6;
+				overflow-x: hidden;
+			}
+
+			/* Navigation */
+			nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 1000;
+				padding: 1rem 2rem;
+				background: rgba(10, 10, 10, 0.9);
+				backdrop-filter: blur(10px);
+				border-bottom: 1px solid var(--border-color);
+				transition: all 0.3s ease;
+			}
+
+			nav.scrolled {
+				padding: 0.5rem 2rem;
+				background: rgba(10, 10, 10, 0.95);
+			}
+
+			.nav-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.logo {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--accent-color);
+				text-decoration: none;
+			}
+
+			.nav-menu {
+				display: flex;
+				list-style: none;
+				gap: 2rem;
+			}
+
+			.nav-menu a {
+				color: var(--text-primary);
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.3s ease;
+				position: relative;
+			}
+
+			.nav-menu a:hover {
+				color: var(--accent-color);
+			}
+
+			.nav-menu a::after {
+				content: "";
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background: var(--accent-color);
+				transition: width 0.3s ease;
+			}
+
+			.nav-menu a:hover::after {
+				width: 100%;
+			}
+
+			/* Main Content */
+			.main-content {
+				margin-top: 80px;
+				padding: 2rem;
+				max-width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.projects-header {
+				text-align: center;
+				margin-bottom: 4rem;
+				padding: 3rem 0;
+			}
+
+			.projects-header h1 {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				margin-bottom: 1rem;
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.projects-header p {
+				font-size: 1.2rem;
+				color: var(--text-secondary);
+				max-width: 600px;
+				margin: 0 auto;
+			}
+
+			/* Filters and Search */
+			.projects-controls {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 3rem;
+				padding: 2rem;
+				background: var(--secondary-bg);
+				border-radius: 12px;
+				border: 1px solid var(--border-color);
+			}
+
+			.filter-buttons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.filter-btn {
+				padding: 0.5rem 1rem;
+				border: 2px solid var(--border-color);
+				background: transparent;
+				color: var(--text-secondary);
+				border-radius: 25px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				font-weight: 500;
+			}
+
+			.filter-btn:hover,
+			.filter-btn.active {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+				background: rgba(0, 102, 255, 0.1);
+			}
+
+			.search-container {
+				position: relative;
+			}
+
+			.project-search {
+				padding: 0.75rem 1rem;
+				border: 2px solid var(--border-color);
+				background: var(--primary-bg);
+				color: var(--text-primary);
+				border-radius: 25px;
+				width: 300px;
+				font-size: 1rem;
+				transition: all 0.3s ease;
+			}
+
+			.project-search:focus {
+				outline: none;
+				border-color: var(--accent-color);
+			}
+
+			.search-container::before {
+				content: "🔍";
+				position: absolute;
+				right: 1rem;
+				top: 50%;
+				transform: translateY(-50%);
+				color: var(--text-secondary);
+			}
+
+			/* Projects Grid */
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.project-card {
+				background: var(--secondary-bg);
+				border-radius: 12px;
+				overflow: hidden;
+				border: 1px solid var(--border-color);
+				transition: all 0.3s ease;
+				cursor: pointer;
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			.project-card.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+				border-color: var(--accent-color);
+			}
+
+			.project-image {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-bottom: 1px solid var(--border-color);
+			}
+
+			.project-content {
+				padding: 1.5rem;
+			}
+
+			.project-content h3 {
+				font-size: 1.3rem;
+				margin-bottom: 0.5rem;
+				color: var(--text-primary);
+			}
+
+			.project-content p {
+				color: var(--text-secondary);
+				margin-bottom: 1rem;
+				line-height: 1.6;
+			}
+
+			.tech-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.tech-tag {
+				background: var(--accent-color);
+				color: white;
+				padding: 0.25rem 0.75rem;
+				border-radius: 20px;
+				font-size: 0.8rem;
+				font-weight: 500;
+			}
+
+			.project-links {
+				display: flex;
+				gap: 1rem;
+			}
+
+			.project-links .btn {
+				padding: 0.5rem 1rem;
+				font-size: 0.9rem;
+			}
+
+			.btn {
+				padding: 1rem 2rem;
+				border: none;
+				border-radius: 8px;
+				font-weight: 600;
+				text-decoration: none;
+				display: inline-block;
+				transition: all 0.3s ease;
+				cursor: pointer;
+				font-size: 1rem;
+			}
+
+			.btn-primary {
+				background: var(--gradient-primary);
+				color: white;
+			}
+
+			.btn-primary:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+			}
+
+			.btn-outline {
+				background: transparent;
+				color: var(--accent-color);
+				border: 2px solid var(--accent-color);
+			}
+
+			.btn-outline:hover {
+				background: var(--accent-color);
+				color: white;
+				transform: translateY(-2px);
+			}
+
+			/* Project Modal */
+			.project-modal {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.8);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 2000;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+			}
+
+			.project-modal.active {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.modal-content {
+				background: var(--secondary-bg);
+				border-radius: 12px;
+				max-width: 800px;
+				max-height: 90vh;
+				overflow-y: auto;
+				border: 1px solid var(--border-color);
+				position: relative;
+			}
+
+			.modal-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 2rem;
+				border-bottom: 1px solid var(--border-color);
+			}
+
+			.modal-header h2 {
+				font-size: 1.5rem;
+				color: var(--text-primary);
+			}
+
+			.modal-close {
+				background: none;
+				border: none;
+				color: var(--text-secondary);
+				font-size: 2rem;
+				cursor: pointer;
+				padding: 0;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				transition: all 0.3s ease;
+			}
+
+			.modal-close:hover {
+				background: var(--border-color);
+				color: var(--text-primary);
+			}
+
+			.modal-body {
+				padding: 2rem;
+			}
+
+			.modal-image {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 2rem;
+			}
+
+			.project-details h3 {
+				color: var(--accent-color);
+				margin-bottom: 1rem;
+			}
+
+			.project-details p {
+				color: var(--text-secondary);
+				line-height: 1.8;
+				margin-bottom: 2rem;
+			}
+
+			.tech-stack {
+				margin-bottom: 2rem;
+			}
+
+			.tech-stack h4 {
+				color: var(--text-primary);
+				margin-bottom: 1rem;
+			}
+
+			.project-links {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				margin-top: 2rem;
+			}
+
+			/* Stats Section */
+			.projects-stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+				margin: 4rem 0;
+				text-align: center;
+			}
+
+			.stat-item {
+				padding: 2rem;
+				background: var(--secondary-bg);
+				border-radius: 12px;
+				border: 1px solid var(--border-color);
+			}
+
+			.stat-number {
+				font-size: 2.5rem;
+				font-weight: 800;
+				color: var(--accent-color);
+				display: block;
+			}
+
+			.stat-label {
+				color: var(--text-secondary);
+				font-weight: 500;
+				margin-top: 0.5rem;
+			}
+
+			/* Empty State */
+			.empty-state {
+				text-align: center;
+				padding: 4rem 2rem;
+				color: var(--text-secondary);
+			}
+
+			.empty-state h3 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.empty-state p {
+				font-size: 1.1rem;
+			}
+
+			/* Footer */
+			footer {
+				background: var(--secondary-bg);
+				padding: 2rem;
+				text-align: center;
+				border-top: 1px solid var(--border-color);
+			}
+
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+				margin-bottom: 1rem;
+			}
+
+			.social-links a {
+				color: var(--text-secondary);
+				font-size: 1.5rem;
+				transition: color 0.3s ease;
+			}
+
+			.social-links a:hover {
+				color: var(--accent-color);
+			}
+
+			.footer-text {
+				color: var(--text-secondary);
+				font-size: 0.9rem;
+			}
+
+			/* Animations */
+			.animate-in {
+				animation: fadeInUp 0.6s ease forwards;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.stagger-child {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.projects-controls {
+					flex-direction: column;
+					align-items: stretch;
+				}
+
+				.filter-buttons {
+					justify-content: center;
+				}
+
+				.search-container {
+					width: 100%;
+				}
+
+				.project-search {
+					width: 100%;
+				}
+
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.nav-menu {
+					display: none;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					right: 0;
+					background: var(--secondary-bg);
+					flex-direction: column;
+					padding: 1rem;
+					border-top: 1px solid var(--border-color);
+				}
+
+				.nav-menu.active {
+					display: flex;
+				}
+
+				.mobile-menu-toggle {
+					display: flex;
+					flex-direction: column;
+					cursor: pointer;
+					gap: 4px;
+				}
+
+				.mobile-menu-toggle span {
+					width: 25px;
+					height: 3px;
+					background: var(--text-primary);
+					transition: all 0.3s ease;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.main-content {
+					padding: 1rem;
+				}
+
+				.projects-header {
+					padding: 2rem 0;
+				}
+
+				.projects-controls {
+					padding: 1rem;
+				}
+
+				.modal-content {
+					margin: 1rem;
+					max-height: calc(100vh - 2rem);
+				}
+
+				.modal-header,
+				.modal-body {
+					padding: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav>
+			<div class="nav-container">
+				<a href="index.html" class="logo">Harsh Patel</a>
+				<ul class="nav-menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="experience.html">Experience</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+				<div class="mobile-menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Main Content -->
+		<div class="main-content">
+			<!-- Projects Header -->
+			<section class="projects-header">
+				<h1>My Projects</h1>
+				<p>
+					Explore my portfolio of data science projects, research
+					work, and innovative applications across various domains.
+				</p>
+			</section>
+
+			<!-- Projects Controls -->
+			<section class="projects-controls">
+				<div class="filter-buttons">
+					<button class="filter-btn active" data-filter="all">
+						All Projects
+					</button>
+					<button class="filter-btn" data-filter="machine-learning">
+						Machine Learning
+					</button>
+					<button class="filter-btn" data-filter="deep-learning">
+						Deep Learning
+					</button>
+					<button class="filter-btn" data-filter="computer-vision">
+						Computer Vision
+					</button>
+					<button class="filter-btn" data-filter="nlp">NLP</button>
+					<button class="filter-btn" data-filter="data-analysis">
+						Data Analysis
+					</button>
+				</div>
+				<div class="search-container">
+					<input
+						type="text"
+						class="project-search"
+						placeholder="Search projects..."
+					/>
+				</div>
+			</section>
+
+			<!-- Projects Grid -->
+			<section class="projects-grid" id="projects-grid">
+				<!-- Project cards will be dynamically generated -->
+			</section>
+
+			<!-- Empty State -->
+			<div class="empty-state" id="empty-state" style="display: none">
+				<h3>No projects found</h3>
+				<p>Try adjusting your search criteria or filters.</p>
+			</div>
+
+			<!-- Projects Stats -->
+			<section class="projects-stats">
+				<div class="stat-item">
+					<span class="stat-number">15+</span>
+					<div class="stat-label">Projects Completed</div>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number">8</span>
+					<div class="stat-label">Technologies Mastered</div>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number">5</span>
+					<div class="stat-label">Research Publications</div>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number">1000+</span>
+					<div class="stat-label">GitHub Contributions</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Project Modal -->
+		<div class="project-modal">
+			<div class="modal-content">
+				<!-- Content will be dynamically generated -->
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer>
+			<div class="social-links">
+				<a
+					href="https://github.com/Mysterious-Harsh"
+					target="_blank"
+					title="GitHub"
+				>
+					<span>🐙</span>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/HarshPatel31/"
+					target="_blank"
+					title="LinkedIn"
+				>
+					<span>💼</span>
+				</a>
+				<a href="mailto:theharsh1@outlook.com" title="Email">
+					<span>📧</span>
+				</a>
+			</div>
+			<div class="footer-text">
+				© 2024 Harsh Patel. All rights reserved. Built with passion for
+				data science.
+			</div>
+		</footer>
+
+		<!-- Main JavaScript -->
+		<script src="main.js"></script>
+
+		<script>
+			// Extended project data for projects page
+			const extendedProjects = [
+				{
+					id: "speech-emotion",
+					title: "Real-Time Speech Emotion Recognition",
+					description:
+						"Advanced ML system that detects seven types of emotions from human speech in real-time using deep learning models. This project combines signal processing, feature extraction, and neural networks to achieve high accuracy in emotion classification.",
+					shortDescription:
+						"Advanced ML system that detects seven types of emotions from human speech in real-time using deep learning models.",
+					image: "resources/project-speech-emotion.jpg",
+					category: "deep-learning",
+					technologies: [
+						"Python",
+						"TensorFlow",
+						"Librosa",
+						"PyAudio",
+						"NLTK",
+						"Scikit-learn",
+					],
+					github: "https://github.com/Mysterious-Harsh/Real_Time_Speech_Emotion_Recognition",
+					demo: "#",
+					features: [
+						"Real-time audio processing",
+						"Multi-emotion classification",
+						"High accuracy neural networks",
+						"Cross-platform compatibility",
+					],
+				},
+				{
+					id: "face-mask-detection",
+					title: "Real-Time Face Mask Detection",
+					description:
+						"Computer vision application using YOLOv5 for real-time face mask detection with high accuracy and performance. Optimized for edge devices and capable of processing multiple video streams simultaneously.",
+					shortDescription:
+						"Computer vision application using YOLOv5 for real-time face mask detection with high accuracy.",
+					image: "resources/project-face-mask.jpg",
+					category: "computer-vision",
+					technologies: [
+						"Python",
+						"YOLOv5",
+						"OpenCV",
+						"PyTorch",
+						"CUDA",
+						"Flask",
+					],
+					github: "https://github.com/Mysterious-Harsh/Real_Time_Face_Mask_Detection",
+					demo: "#",
+					features: [
+						"Real-time object detection",
+						"High accuracy classification",
+						"Multi-stream processing",
+						"Web interface integration",
+					],
+				},
+				{
+					id: "data-dashboard",
+					title: "Interactive Data Dashboard",
+					description:
+						"Comprehensive business analytics dashboard with real-time data visualization and KPI tracking capabilities. Built with modern web technologies and optimized for large datasets.",
+					shortDescription:
+						"Comprehensive business analytics dashboard with real-time data visualization and KPI tracking.",
+					image: "resources/project-dashboard.jpg",
+					category: "data-analysis",
+					technologies: [
+						"Python",
+						"Pandas",
+						"Plotly",
+						"Dash",
+						"SQL",
+						"Redis",
+					],
+					github: "#",
+					demo: "#",
+					features: [
+						"Real-time data updates",
+						"Interactive visualizations",
+						"Custom KPI tracking",
+						"Export functionality",
+					],
+				},
+				{
+					id: "gender-classifier",
+					title: "Real-Time Gender Classifier by Voice",
+					description:
+						"Machine learning system that classifies gender from voice patterns using advanced signal processing and deep learning techniques. Achieves high accuracy across diverse voice samples.",
+					shortDescription:
+						"ML system that classifies gender from voice patterns using advanced signal processing.",
+					image: "resources/project-speech-emotion.jpg",
+					category: "deep-learning",
+					technologies: [
+						"Python",
+						"TensorFlow",
+						"Librosa",
+						"NumPy",
+						"Pandas",
+					],
+					github: "https://github.com/Mysterious-Harsh/Real_TIme_Gender_Classifier_By_Voice",
+					demo: "#",
+					features: [
+						"Voice pattern analysis",
+						"Real-time classification",
+						"High accuracy model",
+						"Cross-validation framework",
+					],
+				},
+				{
+					id: "news-classification",
+					title: "20 Newsgroup Text Classification",
+					description:
+						"Advanced text classification system for categorizing news articles into 20 different categories using various NLP techniques and machine learning algorithms.",
+					shortDescription:
+						"Text classification system for categorizing news articles into 20 different categories.",
+					image: "resources/project-dashboard.jpg",
+					category: "nlp",
+					technologies: [
+						"Python",
+						"NLTK",
+						"Scikit-learn",
+						"TensorFlow",
+						"Pandas",
+					],
+					github: "https://github.com/Mysterious-Harsh/20_Newsgroup_Text_classification",
+					demo: "#",
+					features: [
+						"Multi-class classification",
+						"Feature engineering",
+						"Model comparison",
+						"Performance optimization",
+					],
+				},
+				{
+					id: "data-structures",
+					title: "Data Structures and Algorithms",
+					description:
+						"Comprehensive implementation of fundamental data structures and algorithms in Python. Includes detailed explanations and performance analysis for each implementation.",
+					shortDescription:
+						"Comprehensive implementation of fundamental data structures and algorithms in Python.",
+					image: "resources/project-dashboard.jpg",
+					category: "machine-learning",
+					technologies: ["Python", "NumPy", "Matplotlib", "Jupyter"],
+					github: "https://github.com/Mysterious-Harsh/Data-Structure-and-Algorithms",
+					demo: "#",
+					features: [
+						"Complete DSA implementation",
+						"Performance analysis",
+						"Educational content",
+						"Visualization tools",
+					],
+				},
+			];
+
+			// Initialize projects page
+			document.addEventListener("DOMContentLoaded", function () {
+				renderProjects(extendedProjects);
+				initializeFilters();
+			});
+
+			function renderProjects(projects) {
+				const grid = document.getElementById("projects-grid");
+				const emptyState = document.getElementById("empty-state");
+
+				if (projects.length === 0) {
+					grid.style.display = "none";
+					emptyState.style.display = "block";
+					return;
+				}
+
+				grid.style.display = "grid";
+				emptyState.style.display = "none";
+
+				grid.innerHTML = projects
+					.map(
+						(project) => `
+                <div class="project-card visible" data-project="${
+					project.id
+				}" data-category="${project.category}">
+                    <img src="${project.image}" alt="${
+							project.title
+						}" class="project-image">
+                    <div class="project-content">
+                        <h3>${project.title}</h3>
+                        <p>${project.shortDescription}</p>
+                        <div class="tech-tags">
+                            ${project.technologies
+								.slice(0, 4)
+								.map(
+									(tech) =>
+										`<span class="tech-tag">${tech}</span>`
+								)
+								.join("")}
+                        </div>
+                        <div class="project-links">
+                            ${
+								project.github
+									? `<a href="${project.github}" target="_blank" class="btn btn-outline">GitHub</a>`
+									: ""
+							}
+                            <a href="#" class="btn btn-primary" onclick="openProjectModal('${
+								project.id
+							}')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            `
+					)
+					.join("");
+			}
+
+			function initializeFilters() {
+				const filterButtons = document.querySelectorAll(".filter-btn");
+				const searchInput = document.querySelector(".project-search");
+
+				filterButtons.forEach((btn) => {
+					btn.addEventListener("click", () => {
+						filterButtons.forEach((b) =>
+							b.classList.remove("active")
+						);
+						btn.classList.add("active");
+
+						const filter = btn.dataset.filter;
+						const searchTerm = searchInput.value;
+						filterProjects(filter, searchTerm);
+					});
+				});
+
+				searchInput.addEventListener("input", (e) => {
+					const activeFilter =
+						document.querySelector(".filter-btn.active").dataset
+							.filter;
+					filterProjects(activeFilter, e.target.value);
+				});
+			}
+
+			function filterProjects(category, searchTerm) {
+				let filteredProjects = extendedProjects;
+
+				// Filter by category
+				if (category !== "all") {
+					filteredProjects = filteredProjects.filter(
+						(project) => project.category === category
+					);
+				}
+
+				// Filter by search term
+				if (searchTerm) {
+					const term = searchTerm.toLowerCase();
+					filteredProjects = filteredProjects.filter(
+						(project) =>
+							project.title.toLowerCase().includes(term) ||
+							project.shortDescription
+								.toLowerCase()
+								.includes(term) ||
+							project.technologies.some((tech) =>
+								tech.toLowerCase().includes(term)
+							)
+					);
+				}
+
+				renderProjects(filteredProjects);
+			}
+
+			function openProjectModal(projectId) {
+				const project = extendedProjects.find(
+					(p) => p.id === projectId
+				);
+				if (!project) return;
+
+				const modal = document.querySelector(".project-modal");
+				const modalContent = modal.querySelector(".modal-content");
+
+				modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h2>${project.title}</h2>
+                    <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="${project.image}" alt="${
+					project.title
+				}" class="modal-image">
+                    <div class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>${project.description}</p>
+                        
+                        <div class="tech-stack">
+                            <h4>Technologies Used:</h4>
+                            <div class="tech-tags">
+                                ${project.technologies
+									.map(
+										(tech) =>
+											`<span class="tech-tag">${tech}</span>`
+									)
+									.join("")}
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <h4>Key Features:</h4>
+                            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                                ${project.features
+									.map((feature) => `<li>${feature}</li>`)
+									.join("")}
+                            </ul>
+                        </div>
+                        
+                        <div class="project-links">
+                            ${
+								project.github
+									? `<a href="${project.github}" target="_blank" class="btn btn-outline">View on GitHub</a>`
+									: ""
+							}
+                            ${
+								project.demo
+									? `<a href="${project.demo}" target="_blank" class="btn btn-primary">Live Demo</a>`
+									: ""
+							}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+				modal.classList.add("active");
+				document.body.style.overflow = "hidden";
+			}
+
+			function closeProjectModal() {
+				const modal = document.querySelector(".project-modal");
+				modal.classList.remove("active");
+				document.body.style.overflow = "";
+			}
+
+			// Close modal on outside click
+			document
+				.querySelector(".project-modal")
+				.addEventListener("click", (e) => {
+					if (e.target.classList.contains("project-modal")) {
+						closeProjectModal();
+					}
+				});
+		</script>
+	</body>
+</html>
