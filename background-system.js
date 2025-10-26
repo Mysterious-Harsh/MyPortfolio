@@ -2,8 +2,8 @@
 class BackgroundSystem {
 	constructor() {
 		this.pageBackgrounds = {
-			index: "resources/bg-home.jpg",
-			about: "resources/bg-about.jpg",
+			index: "resources/bg-home.png",
+			about: "resources/bg-about.png",
 			projects: "resources/bg-projects.jpg",
 			experience: "resources/bg-experience.jpg",
 			contact: "resources/bg-contact.jpg",
@@ -140,7 +140,7 @@ class BackgroundSystem {
 
 		// Parallax effect for background
 		if (this.backgroundOverlay) {
-			const parallaxSpeed = 0.5;
+			const parallaxSpeed = 0.2;
 			this.backgroundOverlay.style.transform = `translateY(${
 				scrollY * parallaxSpeed
 			}px)`;
