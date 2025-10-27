@@ -543,6 +543,7 @@ class PortfolioApp {
 
 		const texts = [
 			"Data Scientist",
+			"Data Analyst",
 			"Machine Learning Engineer",
 			"AI Researcher",
 			"Deep Learning Specialist",
@@ -645,7 +646,7 @@ class PortfolioApp {
 			particles.forEach((particle) => {
 				ctx.beginPath();
 				ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-				ctx.fillStyle = "rgba(0, 102, 255, 0.5)";
+				ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
 				ctx.fill();
 			});
 

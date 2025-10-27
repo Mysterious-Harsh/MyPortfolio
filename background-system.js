@@ -210,7 +210,7 @@ class BackgroundSystem {
         `;
 
 		// Create particles
-		for (let i = 0; i < 20; i++) {
+		for (let i = 0; i < 40; i++) {
 			const particle = document.createElement("div");
 			particle.className = "floating-particle";
 			particle.style.cssText = `
