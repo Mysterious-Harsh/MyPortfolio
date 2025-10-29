@@ -125,6 +125,7 @@ class BackgroundSystem {
 			card.style.background = "rgba(26, 26, 26, 0.9)";
 			card.style.backdropFilter = "blur(10px)";
 		});
+		this.updateScrollEffects();
 	}
 
 	createScrollEffects() {
@@ -153,10 +154,7 @@ class BackgroundSystem {
 			const sectionTop = rect.top;
 			const sectionHeight = rect.height;
 
-			if (
-				sectionTop < windowHeight * 0.8 &&
-				sectionTop > -sectionHeight
-			) {
+			if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
 				const opacity = Math.max(
 					0,
 					Math.min(1, (windowHeight - sectionTop) / windowHeight)
@@ -258,6 +256,7 @@ class BackgroundSystem {
         `;
 
 		// Create wave layers
+		// background: linear-gradient(45deg, var(--accent-color), transparent);
 		for (let i = 0; i < 3; i++) {
 			const wave = document.createElement("div");
 			wave.className = "wave";
@@ -266,10 +265,10 @@ class BackgroundSystem {
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 100px;
-                background: linear-gradient(45deg, var(--accent-color), transparent);
-                opacity: 0.1;
-                animation: wave ${3 + i * 2}s infinite ease-in-out;
+                height: 80px;
+                background: var(--accent-color);
+                opacity: 0.08;
+                animation: wave ${3 + i * 4}s infinite ease-in-out;
                 animation-delay: ${i * 0.5}s;
             `;
 			waveContainer.appendChild(wave);

@@ -604,7 +604,7 @@ class PortfolioApp {
 		const createParticles = () => {
 			particles = [];
 			const particleCount = Math.floor(
-				(canvas.width * canvas.height) / 20000
+				(canvas.width * canvas.height) / 16000
 			);
 
 			for (let i = 0; i < particleCount; i++) {
@@ -634,8 +634,8 @@ class PortfolioApp {
 				const distance = Math.sqrt(dx * dx + dy * dy);
 
 				if (distance < 100) {
-					particle.x -= dx * 0.01;
-					particle.y -= dy * 0.01;
+					particle.x -= dx * 0.02;
+					particle.y -= dy * 0.02;
 				}
 			});
 		};
@@ -661,8 +661,8 @@ class PortfolioApp {
 						ctx.beginPath();
 						ctx.moveTo(particle.x, particle.y);
 						ctx.lineTo(otherParticle.x, otherParticle.y);
-						ctx.strokeStyle = `rgba(0, 102, 255, ${
-							0.2 * (1 - distance / 100)
+						ctx.strokeStyle = `rgba(255, 0, 0, ${
+							0.4 * (1 - distance / 80)
 						})`;
 						ctx.stroke();
 					}
