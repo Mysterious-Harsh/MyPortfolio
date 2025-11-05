@@ -54,6 +54,11 @@
 				color: var(--text-primary);
 				line-height: 1.6;
 				overflow-x: hidden;
+				opacity: 0;
+				transition: opacity 2s ease-in-out;
+			}
+			.loaded {
+				opacity: 1;
 			}
 
 			/* Navigation */
@@ -615,7 +620,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="document.body.classList.add('loaded')">
 		<!-- Navigation -->
 		<nav>
 			<div class="nav-container">
@@ -701,7 +706,7 @@
 					<div class="stat-label">Research Publications</div>
 				</div>
 				<div class="stat-item">
-					<span class="stat-number">1000+</span>
+					<span class="stat-number">10+</span>
 					<div class="stat-label">GitHub Contributions</div>
 				</div>
 			</section>
@@ -748,21 +753,57 @@
 			// Extended project data for projects page
 			const extendedProjects = [
 				{
+					id: "Cataract_Eye_disease_detection",
+					title: "Cataract Eye Disease Detection",
+					description:
+						"Developed a comprehensive cataract detection system that leverages convolutional neural networks (CNNs) and image preprocessing to analyze eye images and classify them into “cataract” or “healthy” categories. The project covers data ingestion, augmentation, model training and validation, and includes performance metrics and visualization of results. It demonstrates end-to-end expertise in medical-image classification, feature engineering, and ML deployment for eye-disease diagnostics.",
+					shortDescription:
+						"Built a deep-learning pipeline in Python to detect cataract eye disease from imagery, enabling automated screening using computer vision and ML.",
+					image: "resources/Eye.jpeg",
+					category: "computer-vision",
+					technologies: [
+						"Python",
+						"TensorFlow",
+						"Flask",
+						"gunicorn",
+						"Scikit-learn",
+						"Matplotlib",
+						"opencv-python",
+						"roboflow",
+						"keras",
+						"HTML",
+						"CSS",
+						"Java Script",
+						"Jinja2",
+						"SQL",
+					],
+					github: "https://github.com/Mysterious-Harsh/Cataract_Eye_disease_detection",
+					demo: "#",
+					features: [
+						"Patient Registration",
+						"Image Upload",
+						"Feedback and Complaint",
+						"Login Page",
+						"Image Upload",
+						"Report Generate",
+					],
+				},
+				{
 					id: "speech-emotion",
 					title: "Real-Time Speech Emotion Recognition",
 					description:
-						"Advanced ML system that detects seven types of emotions from human speech in real-time using deep learning models. This project combines signal processing, feature extraction, and neural networks to achieve high accuracy in emotion classification.",
+						"Designed and implemented a real-time emotion recognition system that classifies seven human emotions (such as anger, joy, and sadness) from live audio input. Leveraged Librosa for feature extraction (MFCC, chroma, and spectral contrast) and trained machine learning classifiers with LSTM to achieve accurate predictions. Integrated real-time audio streaming for responsive emotion detection applications in human–AI interaction systems.",
 					shortDescription:
-						"Advanced ML system that detects seven types of emotions from human speech in real-time using deep learning models.",
-					image: "resources/project-speech-emotion.jpg",
+						"Developed a real-time speech emotion recognition system using machine learning and audio feature extraction to classify seven emotional states, enhancing human–computer interaction capabilities.",
+					image: "resources/SER.png",
 					category: "deep-learning",
 					technologies: [
 						"Python",
 						"TensorFlow",
 						"Librosa",
 						"PyAudio",
-						"NLTK",
 						"Scikit-learn",
+						"Matplotlib",
 					],
 					github: "https://github.com/Mysterious-Harsh/Real_Time_Speech_Emotion_Recognition",
 					demo: "#",
@@ -777,9 +818,9 @@
 					id: "face-mask-detection",
 					title: "Real-Time Face Mask Detection",
 					description:
-						"Computer vision application using YOLOv5 for real-time face mask detection with high accuracy and performance. Optimized for edge devices and capable of processing multiple video streams simultaneously.",
+						"Developed a deep learning-based computer vision model using YOLOv5 to detect whether individuals are wearing face masks in real-time video feeds. Implemented data preprocessing, augmentation, and transfer learning to boost model performance and reduce false positives. Built a lightweight and responsive detection pipeline suitable for security systems, smart surveillance, and healthcare environments.",
 					shortDescription:
-						"Computer vision application using YOLOv5 for real-time face mask detection with high accuracy.",
+						"Built a YOLOv5-based deep learning model to detect face mask compliance in live camera streams, improving real-time surveillance and safety automation.",
 					image: "resources/project-face-mask.jpg",
 					category: "computer-vision",
 					technologies: [
@@ -800,38 +841,38 @@
 					],
 				},
 				{
-					id: "data-dashboard",
-					title: "Interactive Data Dashboard",
+					id: "Neural-Network",
+					title: "Neural Network from Scratch",
 					description:
-						"Comprehensive business analytics dashboard with real-time data visualization and KPI tracking capabilities. Built with modern web technologies and optimized for large datasets.",
+						"Developed a custom neural network architecture in Python (via a Jupyter Notebook) to demonstrate end-to-end learning: data ingestion, preprocessing, model definition, training, evaluation and visualization. Leveraged the notebook format to clearly document the machine-learning workflow, including layer design, forward/back propagation logic, hyperparameter tuning, and performance metrics. This project underscores proficiency in deep learning fundamentals, Python coding practices, and explainable ML pipelines.",
 					shortDescription:
-						"Comprehensive business analytics dashboard with real-time data visualization and KPI tracking.",
-					image: "resources/project-dashboard.jpg",
-					category: "data-analysis",
+						"Built a custom neural network from scratch in Python to demonstrate forward and backward propagation, training, and evaluation using a fully explainable deep learning workflow.",
+					image: "resources/neural-bg-4.jpg",
+					category: "AI",
 					technologies: [
 						"Python",
 						"Pandas",
 						"Plotly",
-						"Dash",
-						"SQL",
-						"Redis",
+						"Numpy",
+						"Advance Mathematics",
 					],
-					github: "#",
+					github: "https://github.com/Mysterious-Harsh/My_Neural_Network",
 					demo: "#",
 					features: [
-						"Real-time data updates",
+						"Dense Layer",
+						"Activation Functions",
+						"Optimizer Functions",
+						"Loss Functions",
 						"Interactive visualizations",
-						"Custom KPI tracking",
-						"Export functionality",
 					],
 				},
 				{
 					id: "gender-classifier",
 					title: "Real-Time Gender Classifier by Voice",
 					description:
-						"Machine learning system that classifies gender from voice patterns using advanced signal processing and deep learning techniques. Achieves high accuracy across diverse voice samples.",
+						"Built a real-time speech-based gender classification model that identifies male or female speakers using voice signal frequency analysis. Employed signal processing techniques and machine learning algorithms LSTM to classify gender with high accuracy. Designed the system to handle live microphone input, demonstrating expertise in audio preprocessing, feature extraction, and ML pipeline design.",
 					shortDescription:
-						"ML system that classifies gender from voice patterns using advanced signal processing.",
+						"Created a real-time gender classification model leveraging speech signal analysis and ML classifiers to identify speaker gender with high accuracy.",
 					image: "resources/project-speech-emotion.jpg",
 					category: "deep-learning",
 					technologies: [
@@ -840,6 +881,8 @@
 						"Librosa",
 						"NumPy",
 						"Pandas",
+						"Matplotlib",
+						"Scikit-learn",
 					],
 					github: "https://github.com/Mysterious-Harsh/Real_TIme_Gender_Classifier_By_Voice",
 					demo: "#",
@@ -854,9 +897,9 @@
 					id: "news-classification",
 					title: "20 Newsgroup Text Classification",
 					description:
-						"Advanced text classification system for categorizing news articles into 20 different categories using various NLP techniques and machine learning algorithms.",
+						"Developed an NLP-based text classification pipeline to categorize articles from the 20 Newsgroups dataset into multiple topics. Utilized TF-IDF vectorization, Naïve Bayes, and Logistic Regression models for efficient and accurate classification. Focused on preprocessing steps such as tokenization, stop-word removal, and lemmatization to enhance model performance. This project highlights skills in feature engineering, text analytics, and machine learning for large-scale textual data.",
 					shortDescription:
-						"Text classification system for categorizing news articles into 20 different categories.",
+						"Performed topic classification on the 20 Newsgroup dataset using NLP techniques such as TF-IDF, feature engineering, and supervised machine learning models.",
 					image: "resources/project-dashboard.jpg",
 					category: "nlp",
 					technologies: [
@@ -879,7 +922,7 @@
 					id: "data-structures",
 					title: "Data Structures and Algorithms",
 					description:
-						"Comprehensive implementation of fundamental data structures and algorithms in Python. Includes detailed explanations and performance analysis for each implementation.",
+						"Created a comprehensive repository of data structures and algorithmic problems implemented in Python, covering arrays, linked lists, trees, graphs, sorting, and dynamic programming. Each solution includes detailed explanations and time complexity analysis, showcasing strong problem-solving skills and preparation for technical interviews or competitive programming.",
 					shortDescription:
 						"Comprehensive implementation of fundamental data structures and algorithms in Python.",
 					image: "resources/project-dashboard.jpg",
@@ -892,6 +935,63 @@
 						"Performance analysis",
 						"Educational content",
 						"Visualization tools",
+					],
+				},
+				{
+					id: "Costing System",
+					title: "Automated Costing System ",
+					description:
+						"Developed an automated costing system designed to simplify and optimize Aluminium fabrication and production cost estimation. The application calculates material, labor, and overhead costs dynamically, enabling accurate and efficient financial forecasting. Built using Python with a structured, modular design for scalability and easy data updates. This project demonstrates strong problem-solving skills in process automation, data handling, and cost analysis, helping reduce manual errors and improve operational decision-making.",
+					shortDescription:
+						"Developed an automated costing system for fabrication workflows using Python to streamline material/labor cost estimation and tracking.",
+					image: "resources/Costing_System.png",
+					category: "Software Developer",
+					technologies: [
+						"Python",
+						"NumPy",
+						"PyQt",
+						"SQL",
+						"Logging",
+						"Authentication",
+					],
+					github: "https://github.com/Mysterious-Harsh/GDAS_Costing_System",
+					demo: "#",
+					features: [
+						"Material addition",
+						"Accessory addition",
+						"Glass addition",
+						"Create multiple products",
+						"Automated Quotation generate",
+						"Multiple currency option",
+						"PDF generation for quotation and used materials and accessory",
+						"Export data option",
+					],
+				},
+				{
+					id: "ai-chatbot",
+					title: "AI Chatbot",
+					description:
+						"Created “Chatbot Sarah”, a fully-featured conversational AI assistant built in Python that supports both typed and spoken interaction. The system integrates natural language understanding via intents datasets (in data/intents.json), enables custom voice responses via data/speak.json, and allows retraining by rerunning Sarah.py after updating the model folder. With components for voice recognition, text-to-speech and runtime evaluation, this project demonstrates my ability to handle end-to-end voice-enabled chatbot development, data engineering and model integration.",
+					shortDescription:
+						"Developed a Python-based conversational AI assistant with text chat, voice recognition and voice response capabilities.",
+					image: "resources/Chatbot.png",
+					category: "machine-learning",
+					technologies: [
+						"Python",
+						"NumPy",
+						"Tkinter",
+						"speech_recognition",
+						"pyaudio",
+						"json",
+						"tensorflow",
+					],
+					github: "https://github.com/Mysterious-Harsh/Chatbot_Sarah",
+					demo: "#",
+					features: [
+						"Text Chat with bot",
+						"Voice recognition",
+						"Voice Response",
+						"Custom Data Training",
 					],
 				},
 			];
@@ -918,37 +1018,37 @@
 				grid.innerHTML = projects
 					.map(
 						(project) => `
-                <div class="project-card visible" data-project="${
-					project.id
-				}" data-category="${project.category}">
-                    <img src="${project.image}" alt="${
+			             <div class="project-card visible" data-project="${
+								project.id
+							}" data-category="${project.category}">
+			                 <img src="${project.image}" alt="${
 							project.title
 						}" class="project-image">
-                    <div class="project-content">
-                        <h3>${project.title}</h3>
-                        <p>${project.shortDescription}</p>
-                        <div class="tech-tags">
-                            ${project.technologies
-								.slice(0, 4)
-								.map(
-									(tech) =>
-										`<span class="tech-tag">${tech}</span>`
-								)
-								.join("")}
-                        </div>
-                        <div class="project-links">
-                            ${
-								project.github
-									? `<a href="${project.github}" target="_blank" class="btn btn-outline">GitHub</a>`
-									: ""
-							}
-                            <a href="#" class="btn btn-primary" onclick="openProjectModal('${
-								project.id
-							}')">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            `
+			                 <div class="project-content">
+			                     <h3>${project.title}</h3>
+			                     <p>${project.shortDescription}</p>
+			                     <div class="tech-tags">
+			                         ${project.technologies
+											.slice(0, 6)
+											.map(
+												(tech) =>
+													`<span class="tech-tag">${tech}</span>`
+											)
+											.join("")}
+			                     </div>
+			                     <div class="project-links">
+			                         ${
+											project.github
+												? `<a href="${project.github}" target="_blank" class="btn btn-outline">GitHub</a>`
+												: ""
+										}
+			                         <a href="#" class="btn btn-primary" onclick="openProjectModal('${
+											project.id
+										}')">Learn More</a>
+			                     </div>
+			                 </div>
+			             </div>
+			         `
 					)
 					.join("");
 			}
@@ -1016,54 +1116,57 @@
 				const modalContent = modal.querySelector(".modal-content");
 
 				modalContent.innerHTML = `
-                <div class="modal-header">
-                    <h2>${project.title}</h2>
-                    <button class="modal-close" onclick="closeProjectModal()">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <img src="${project.image}" alt="${
+			             <div class="modal-header">
+			                 <h2>${project.title}</h2>
+			                 <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+			             </div>
+			             <div class="modal-body">
+			                 <img src="${project.image}" alt="${
 					project.title
 				}" class="modal-image">
-                    <div class="project-details">
-                        <h3>Project Overview</h3>
-                        <p>${project.description}</p>
-                        
-                        <div class="tech-stack">
-                            <h4>Technologies Used:</h4>
-                            <div class="tech-tags">
-                                ${project.technologies
-									.map(
-										(tech) =>
-											`<span class="tech-tag">${tech}</span>`
-									)
-									.join("")}
-                            </div>
-                        </div>
-                        
-                        <div class="tech-stack">
-                            <h4>Key Features:</h4>
-                            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                                ${project.features
-									.map((feature) => `<li>${feature}</li>`)
-									.join("")}
-                            </ul>
-                        </div>
-                        
-                        <div class="project-links">
-                            ${
-								project.github
-									? `<a href="${project.github}" target="_blank" class="btn btn-outline">View on GitHub</a>`
-									: ""
-							}
-                            ${
-								project.demo
-									? `<a href="${project.demo}" target="_blank" class="btn btn-primary">Live Demo</a>`
-									: ""
-							}
-                        </div>
-                    </div>
-                </div>
-            `;
+			                 <div class="project-details">
+			                     <h3>Project Overview</h3>
+			                     <p>${project.description}</p>
+
+			                     <div class="tech-stack">
+			                         <h4>Technologies Used:</h4>
+			                         <div class="tech-tags">
+			                             ${project.technologies
+												.map(
+													(tech) =>
+														`<span class="tech-tag">${tech}</span>`
+												)
+												.join("")}
+			                         </div>
+			                     </div>
+
+			                     <div class="tech-stack">
+			                         <h4>Key Features:</h4>
+			                         <ul style="color: var(--text-secondary); line-height: 1.8;">
+			                             ${project.features
+												.map(
+													(feature) =>
+														`<li>${feature}</li>`
+												)
+												.join("")}
+			                         </ul>
+			                     </div>
+
+			                     <div class="project-links">
+			                         ${
+											project.github
+												? `<a href="${project.github}" target="_blank" class="btn btn-outline">View on GitHub</a>`
+												: ""
+										}
+			                         ${
+											project.demo
+												? `<a href="${project.demo}" target="_blank" class="btn btn-primary">Live Demo</a>`
+												: ""
+										}
+			                     </div>
+			                 </div>
+			             </div>
+			         `;
 
 				modal.classList.add("active");
 				document.body.style.overflow = "hidden";

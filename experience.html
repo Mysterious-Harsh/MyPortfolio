@@ -55,6 +55,11 @@
 				color: var(--text-primary);
 				line-height: 1.6;
 				overflow-x: hidden;
+				opacity: 0;
+				transition: opacity 2s ease-in-out;
+			}
+			.loaded {
+				opacity: 1;
 			}
 
 			/* Navigation */
@@ -566,7 +571,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="document.body.classList.add('loaded')">
 		<!-- Navigation -->
 		<nav>
 			<div class="nav-container">

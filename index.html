@@ -46,6 +46,13 @@
 					#c1abff
 				);
 			}
+			body {
+				opacity: 0;
+				transition: opacity 2s ease-in-out;
+			}
+			.loaded {
+				opacity: 1;
+			}
 
 			/* Reset and Base Styles */
 			* {
@@ -761,7 +768,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="document.body.classList.add('loaded')">
 		<!-- Navigation -->
 		<nav>
 			<div class="nav-container">
