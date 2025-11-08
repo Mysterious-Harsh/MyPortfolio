@@ -234,7 +234,8 @@
 			}
 
 			.btn-primary:hover {
-				transform: translateY(-2px);
+				transform: translateY(-4px);
+				border-color: var(--accent-color);
 				box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
 			}
 
@@ -300,9 +301,9 @@
 			}
 
 			.skill-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-4px);
 				border-color: var(--accent-color);
-				box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+				box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
 			}
 
 			.skill-icon {
@@ -341,10 +342,13 @@
 				border: 1px solid var(--border-color);
 				transition: all 0.3s ease;
 				cursor: pointer;
+				/* opacity: 0; */
+				transform: translateY(20px);
 			}
 
 			.project-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-4px);
+				border-color: var(--accent-color);
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 			}
 
@@ -410,6 +414,12 @@
 				padding: 2rem;
 				border-radius: 12px;
 				border: 1px solid var(--border-color);
+				transition: all 0.3s ease;
+			}
+			.experience-card:hover {
+				transform: translateY(-4px);
+				border-color: var(--accent-color);
+				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 			}
 
 			.experience-card h3 {
@@ -456,6 +466,11 @@
 				background: var(--secondary-bg);
 				border-radius: 12px;
 				border: 1px solid var(--border-color);
+			}
+			.stat-item:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
+				border-color: var(--accent-color);
 			}
 
 			.stat-number {
@@ -557,7 +572,7 @@
 				z-index: 1;
 			}
 
-			.skill-card,
+			/* .skill-card,
 			.project-card,
 			.experience-card,
 			.contact-card,
@@ -567,15 +582,15 @@
 				background: rgba(26, 26, 26, 0.9) !important;
 				backdrop-filter: blur(10px);
 				border: 1px solid rgba(51, 51, 51, 0.8) !important;
-			}
+			} */
 
-			.contact-form-container,
+			/* .contact-form-container,
 			.availability-status,
 			.social-links-card {
 				background: rgba(26, 26, 26, 0.9) !important;
 				backdrop-filter: blur(10px);
 				border: 1px solid rgba(51, 51, 51, 0.8) !important;
-			}
+			} */
 
 			/* Floating Particles */
 			#floating-particles {
@@ -942,34 +957,33 @@
 					data-category="data-analysis"
 				>
 					<img
-						src="resources/project-dashboard.jpg"
+						src="resources/Eye.jpeg"
 						alt="Data Dashboard"
 						class="project-image"
 					/>
 					<div class="project-content">
-						<h3>Newsgroup Data analysis and visualization</h3>
+						<h3>Cataract Eye Disease Detection</h3>
 						<p>
-							Analyzed and processed the data of 20 newsgroup with
-							python data manipulation libraries, performed EDA
-							and gained useful insights and presented with
-							different visualization graphs.
+							Built a deep-learning pipeline in Python to detect
+							cataract eye disease from imagery, enabling
+							automated screening using computer vision and ML.
 						</p>
 						<div class="tech-tags">
 							<span class="tech-tag">Python</span>
 							<span class="tech-tag">Pandas</span>
 							<span class="tech-tag">Matplotlib</span>
-							<span class="tech-tag">Word Cloud</span>
-							<span class="tech-tag">NLTK</span>
+							<span class="tech-tag">TensorFlow</span>
+							<span class="tech-tag">opencv-python</span>
 						</div>
 						<div class="project-links">
 							<a
-								href="https://github.com/Mysterious-Harsh/20_Newsgroup_Text_classification"
+								href="https://github.com/Mysterious-Harsh/Cataract_Eye_disease_detection"
 								target="_blank"
 								class="btn btn-outline"
 								>GitHub</a
 							>
 							<a
-								href="https://github.com/Mysterious-Harsh/20_Newsgroup_Text_classification/blob/main/Report_20_Newsgroups_Text_Classification.ipynb"
+								href="https://github.com/Mysterious-Harsh/Cataract_Eye_disease_detection/blob/main/Model_Training/Cataract%20Detection.ipynb"
 								class="btn btn-primary"
 								>Live Demo</a
 							>

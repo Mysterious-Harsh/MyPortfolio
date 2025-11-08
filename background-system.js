@@ -19,7 +19,7 @@ class BackgroundSystem {
 	init() {
 		this.setupStaticBackground();
 		this.createScrollEffects();
-		this.addParallaxEffects();
+		// this.addParallaxEffects();
 		this.initializeLiveElements();
 	}
 
