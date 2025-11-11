@@ -604,7 +604,7 @@ class PortfolioApp {
 		const createParticles = () => {
 			particles = [];
 			const particleCount = Math.floor(
-				(canvas.width * canvas.height) / 16000
+				(canvas.width * canvas.height) / 20000
 			);
 
 			for (let i = 0; i < particleCount; i++) {

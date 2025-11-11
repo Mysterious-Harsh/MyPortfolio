@@ -2,8 +2,8 @@
 class BackgroundSystem {
 	constructor() {
 		this.pageBackgrounds = {
-			index: "resources/bg-home.png",
-			about: "resources/bg-about.png",
+			index: "resources/bg-home.jpg",
+			about: "resources/bg-about.jpg",
 			projects: "resources/bg-projects.jpg",
 			experience: "resources/bg-experience.jpg",
 			contact: "resources/bg-contact.jpg",
@@ -19,7 +19,7 @@ class BackgroundSystem {
 	init() {
 		this.setupStaticBackground();
 		this.createScrollEffects();
-		// this.addParallaxEffects();
+		this.addParallaxEffects();
 		this.initializeLiveElements();
 	}
 
@@ -34,7 +34,7 @@ class BackgroundSystem {
 
 	setupStaticBackground() {
 		// Remove any existing background setup
-		this.removeExistingBackgrounds();
+		// this.removeExistingBackgrounds();
 
 		// Create static background container
 		this.createBackgroundContainer();
@@ -141,7 +141,7 @@ class BackgroundSystem {
 
 		// Parallax effect for background
 		if (this.backgroundOverlay) {
-			const parallaxSpeed = 0.2;
+			const parallaxSpeed = 0;
 			this.backgroundOverlay.style.transform = `translateY(${
 				scrollY * parallaxSpeed
 			}px)`;
@@ -164,12 +164,10 @@ class BackgroundSystem {
 			}
 		});
 	}
-
+	// ".contact-cta, .experience-card, .section-title, .section-subtitle, .skill-card, .project-card, .stat-item, .metric-card"
 	addParallaxEffects() {
 		// Add parallax to specific elements
-		const parallaxElements = document.querySelectorAll(
-			".skill-card, .project-card, .stat-item, .metric-card"
-		);
+		const parallaxElements = document.querySelectorAll("section");
 
 		window.addEventListener("scroll", () => {
 			const scrollY = window.pageYOffset;
@@ -177,7 +175,7 @@ class BackgroundSystem {
 			parallaxElements.forEach((element, index) => {
 				// const speed = 0.01 + (index % 2) * 0.05;
 				// const yPos = -(scrollY * speed);
-				const yPos = -(scrollY * 0.01);
+				const yPos = -(scrollY * 0.08);
 				element.style.transform = `translateY(${yPos}px)`;
 			});
 		});
@@ -208,7 +206,7 @@ class BackgroundSystem {
         `;
 
 		// Create particles
-		for (let i = 0; i < 40; i++) {
+		for (let i = 0; i < 20; i++) {
 			const particle = document.createElement("div");
 			particle.className = "floating-particle";
 			particle.style.cssText = `

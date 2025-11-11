@@ -198,6 +198,11 @@
 			.skills-section {
 				margin-bottom: 5rem;
 			}
+			section {
+				background: transparent !important;
+				position: relative;
+				z-index: 1;
+			}
 
 			.section-title {
 				font-size: clamp(2rem, 4vw, 3rem);
@@ -205,6 +210,19 @@
 				text-align: center;
 				margin-bottom: 3rem;
 				color: var(--text-primary);
+			}
+			section {
+				transition: opacity 0.6s ease, transform 0.6s ease;
+			}
+			.skills-chart,
+			.skill-category,
+			.education-card,
+			.certification-card,
+			.skill-card,
+			.project-card,
+			.stat-item,
+			.metric-card {
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
 
 			.skills-container {
