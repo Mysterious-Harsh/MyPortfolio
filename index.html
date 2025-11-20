@@ -21,13 +21,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 
-		<!-- Color Manager -->
-		<!-- <script src="color-manager.js"></script> -->
-
-		<!-- Background Selector -->
-		<!-- <script src="background-selector.js"></script> -->
-
-		<!-- Background System -->
 		<script src="background-system.js"></script>
 
 		<style>
@@ -157,9 +150,6 @@
 				align-items: center;
 				justify-content: center;
 				position: relative;
-				/* background: url("resources/neural-bg-1.jpg") center/cover; */
-				/* background-attachment: fixed; */
-				/* transition: background 0.5s ease; */
 			}
 
 			.hero::before {
@@ -248,7 +238,7 @@
 			.btn-outline:hover {
 				background: var(--accent-color);
 				color: white;
-				transform: translateY(-2px);
+				/* transform: translateY(-2px); */
 			}
 
 			/* Particle Canvas */
@@ -266,6 +256,7 @@
 				padding: 5rem 2rem;
 				max-width: 1200px;
 				margin: 0 auto;
+				/* opacity: 0; */
 			}
 
 			.section-title {
@@ -297,13 +288,13 @@
 				border-radius: 16px;
 				text-align: center;
 				border: 1px solid var(--border-color);
-				transition: all 0.4s ease;
 			}
 
 			.skill-card:hover {
-				transform: translateY(-4px);
+				transform: translateY(-6px) !important;
 				border-color: var(--accent-color);
 				box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+				transition: all 0.4s ease !important;
 			}
 
 			.skill-icon {
@@ -347,7 +338,7 @@
 			}
 
 			.project-card:hover {
-				transform: translateY(-4px);
+				transform: translateY(-6px) !important;
 				border-color: var(--accent-color);
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 			}
@@ -417,7 +408,7 @@
 				transition: all 0.4s ease;
 			}
 			.experience-card:hover {
-				transform: translateY(-4px);
+				transform: translateY(-6px) !important;
 				border-color: var(--accent-color);
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 			}
@@ -468,7 +459,7 @@
 				border: 1px solid var(--border-color);
 			}
 			.stat-item:hover {
-				transform: translateY(-4px);
+				transform: translateY(-6px) !important;
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 				border-color: var(--accent-color);
 			}
@@ -538,19 +529,36 @@
 			}
 
 			/* Animations */
-			/* .animate-in {
-				animation: fadeInUp 0.6s ease forwards;
-			} */
-			/* @keyframes fadeInUp {
+			.animate-in {
+				animation: fadeInUp 0.8s ease-out forwards;
+			}
+
+			@keyframes fadeInUp {
 				from {
 					opacity: 0;
-					transform: translateY(30px);
+					transform: translateY(50px);
 				}
 				to {
 					opacity: 1;
 					transform: translateY(0);
 				}
-			} */
+			}
+
+			/* Animations */
+			.animate-out {
+				animation: fadeIndown 0.8s ease-out backwards;
+			}
+
+			@keyframes fadeIndown {
+				from {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+				to {
+					opacity: 0;
+					transform: translateY(50px);
+				}
+			}
 
 			/* Background System Styles */
 			body {
@@ -565,32 +573,6 @@
 				z-index: 1;
 				background: transparent;
 			}
-
-			section {
-				background: transparent !important;
-				position: relative;
-				z-index: 1;
-			}
-
-			/* .skill-card,
-			.project-card,
-			.experience-card,
-			.contact-card,
-			.timeline-content,
-			.stat-item,
-			.metric-card {
-				background: rgba(26, 26, 26, 0.9) !important;
-				backdrop-filter: blur(10px);
-				border: 1px solid rgba(51, 51, 51, 0.8) !important;
-			} */
-
-			/* .contact-form-container,
-			.availability-status,
-			.social-links-card {
-				background: rgba(26, 26, 26, 0.9) !important;
-				backdrop-filter: blur(10px);
-				border: 1px solid rgba(51, 51, 51, 0.8) !important;
-			} */
 
 			/* Floating Particles */
 			#floating-particles {
@@ -675,14 +657,7 @@
 
 			/* Enhanced Scroll Effects */
 			section {
-				transition: opacity 0.4s ease, transform 0.4s ease;
-			}
-
-			.skill-card,
-			.project-card,
-			.stat-item,
-			.metric-card {
-				transition: transform 0.4s ease, box-shadow 0.4s ease;
+				transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 			}
 
 			/* Color Customizer Toggle */
@@ -724,8 +699,8 @@
 			}
 
 			.stagger-child {
-				/* opacity: 0; */
-				transform: translateY(20px);
+				opacity: 0;
+				transform: translateY(50px);
 			}
 
 			/* Responsive Design */
@@ -874,7 +849,7 @@
 		</section>
 
 		<!-- Featured Projects -->
-		<section class="featured-projects">
+		<section>
 			<h2 class="section-title">Featured Projects</h2>
 			<p class="section-subtitle">
 				Innovative solutions and research projects
@@ -882,7 +857,7 @@
 
 			<div class="projects-grid">
 				<div
-					class="project-card"
+					class="project-card stagger-child"
 					data-project="speech-emotion"
 					data-category="deep-learning"
 				>
@@ -917,7 +892,7 @@
 				</div>
 
 				<div
-					class="project-card"
+					class="project-card stagger-child"
 					data-project="face-mask-detection"
 					data-category="computer-vision"
 				>
@@ -952,7 +927,7 @@
 				</div>
 
 				<div
-					class="project-card"
+					class="project-card stagger-child"
 					data-project="data-dashboard"
 					data-category="data-analysis"
 				>

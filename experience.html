@@ -207,13 +207,13 @@
 				position: relative;
 				margin-bottom: 4rem;
 				opacity: 0;
-				transform: translateY(30px);
+				transform: translateY(50px);
 			}
 
-			.timeline-item.animate-in {
+			/* .timeline-item.animate-in {
 				opacity: 1;
 				transform: translateY(0);
-			}
+			} */
 
 			.timeline-item:nth-child(odd) .timeline-content {
 				margin-right: 55%;
@@ -256,7 +256,7 @@
 
 			.timeline-content:hover {
 				border-color: var(--accent-color);
-				transform: translateY(-5px);
+				transform: translateY(-6px) !important;
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.1);
 			}
 
@@ -362,7 +362,7 @@
 			}
 
 			.skill-category:hover {
-				transform: translateY(-3px);
+				transform: translateY(-6px) !important;
 				box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
 				border-color: var(--accent-color);
 			}
@@ -424,7 +424,7 @@
 			}
 
 			.metric-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-6px) !important;
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.2);
 				border-color: var(--accent-color);
 			}
@@ -498,24 +498,40 @@
 			}
 
 			/* Animations */
-			/* .animate-in {
-				animation: fadeInUp 0.6s ease forwards;
+			.animate-in {
+				animation: fadeInUp 0.8s ease-out forwards;
 			}
 
 			@keyframes fadeInUp {
 				from {
 					opacity: 0;
-					transform: translateY(30px);
+					transform: translateY(50px);
 				}
 				to {
 					opacity: 1;
 					transform: translateY(0);
 				}
-			} */
+			}
+
+			/* Animations */
+			.animate-out {
+				animation: fadeIndown 0.8s ease-out backwards;
+			}
+
+			@keyframes fadeIndown {
+				from {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+				to {
+					opacity: 0;
+					transform: translateY(50px);
+				}
+			}
 
 			.stagger-child {
-				/* opacity: 0; */
-				transform: translateY(20px);
+				opacity: 0;
+				transform: translateY(50px);
 			}
 
 			/* Responsive Design */
@@ -1267,7 +1283,7 @@
 							behavior: "smooth",
 							block: "center",
 						});
-						item.style.animation = "pulse 0.5s ease";
+						item.style.animation = "pulse 0.6s ease";
 						setTimeout(() => {
 							item.style.animation = "";
 						}, 500);

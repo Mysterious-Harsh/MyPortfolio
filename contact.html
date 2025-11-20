@@ -185,7 +185,7 @@
 			}
 
 			.contact-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-6px) !important;
 				border-color: var(--accent-color);
 				box-shadow: 0 15px 40px rgba(0, 102, 255, 0.1);
 			}
@@ -488,24 +488,40 @@
 			}
 
 			/* Animations */
-			/* .animate-in {
-				animation: fadeInUp 0.6s ease forwards;
+			.animate-in {
+				animation: fadeInUp 0.8s ease-out forwards;
 			}
 
 			@keyframes fadeInUp {
 				from {
 					opacity: 0;
-					transform: translateY(30px);
+					transform: translateY(50px);
 				}
 				to {
 					opacity: 1;
 					transform: translateY(0);
 				}
-			} */
+			}
+
+			/* Animations */
+			.animate-out {
+				animation: fadeIndown 0.8s ease-out backwards;
+			}
+
+			@keyframes fadeIndown {
+				from {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+				to {
+					opacity: 0;
+					transform: translateY(50px);
+				}
+			}
 
 			.stagger-child {
-				/* opacity: 0; */
-				transform: translateY(20px);
+				opacity: 0;
+				transform: translateY(50px);
 			}
 
 			/* Responsive Design */

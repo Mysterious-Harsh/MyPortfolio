@@ -59,30 +59,41 @@ class PortfolioApp {
 	// Scroll animations
 	initScrollAnimations() {
 		const observerOptions = {
-			threshold: 0.1,
+			threshold: 0.2,
 			rootMargin: "0px 0px -50px 0px",
 		};
 
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
+					entry.target.classList.remove("animate-out");
+
 					entry.target.classList.add("animate-in");
 
 					// Stagger animation for child elements
-					const children =
-						entry.target.querySelectorAll(".stagger-child");
-					children.forEach((child, index) => {
-						setTimeout(() => {
-							child.classList.add("animate-in");
-						}, index * 100);
-					});
+					// const children =
+					// 	entry.target.querySelectorAll(".stagger-child");
+					// children.forEach((child, index) => {
+					// 	setTimeout(() => {
+					// 		child.classList.add("animate-in");
+					// 	}, index * 100);
+					// });
+				} else {
+					entry.target.classList.remove("animate-in");
+					entry.target.classList.add("animate-out");
+
+					// const children =
+					// 	entry.target.querySelectorAll(".stagger-child");
+					// children.forEach((child, index) => {
+					// 	child.classList.remove("animate-in");
+					// });
 				}
 			});
 		}, observerOptions);
 
 		// Observe all sections
 		document
-			.querySelectorAll("section, .card, .timeline-item")
+			.querySelectorAll(".stagger-child, .timeline-item")
 			.forEach((el) => {
 				observer.observe(el);
 			});
