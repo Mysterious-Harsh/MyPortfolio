@@ -1,0 +1,277 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Harshkumar Patel — AI Engineer{% endblock %}
+{% block meta_desc %}AI Engineer building LLM systems, RAG pipelines, and cognitive AI. Offline AI, deep learning, full-stack.{% endblock %}
+
+{% block extra_head %}
+{{ constellation_payload|json_script:"constellation-data" }}
+{% endblock %}
+
+{% block splash %}
+<div id="splash">
+  <canvas id="splash-canvas"></canvas>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- SECTION 1: HERO -->
+<section class="hero-section">
+  <div class="hero-content">
+
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for AI Projects &amp; Full-time Roles
+    </div>
+
+    <div id="parallax-name" class="hero-name-wrap">
+      <h1 class="hero-name">
+        <span class="hero-n1">Harshkumar</span>
+        <span class="hero-n2">Patel</span>
+      </h1>
+    </div>
+
+    <div class="hero-role">
+      <span class="typed-text" id="typed-text"></span><span class="cursor-blink"></span>
+    </div>
+
+    <p class="hero-desc">
+      I build <strong>intelligent systems</strong> that reason, remember, and act.
+      From offline cognitive AI to multi-agent LLM pipelines —
+      engineering AI that works in the real world.
+    </p>
+
+    <div class="hero-btns">
+      <a href="{% url 'core:projects' %}" class="btn-primary"><span>View My Work →</span></a>
+      <a href="{% url 'core:contact' %}" class="btn-ghost">Get In Touch</a>
+    </div>
+
+    <a href="#stats-strip" class="hero-scroll-hint" aria-label="Scroll down">
+      <span class="hero-scroll-line"></span>
+    </a>
+
+  </div>
+</section>
+
+<!-- SECTION 2: STATS STRIP -->
+<section class="stats-strip" id="stats-strip">
+  <div class="stats-strip-inner">
+
+    <div class="stats-avail">
+      <div class="avail-pulse">
+        <div class="avail-dot"></div>
+        Available
+      </div>
+      <div class="stats-avail-h">Open to AI Projects &amp; Roles</div>
+      <a href="mailto:{{ data.email }}" class="avail-cta">Let's talk →</a>
+    </div>
+
+    <div class="stats-divider"></div>
+
+    <div class="stats-numbers reveal">
+      <div class="stat-item">
+        <div class="stat-n" data-count="6" data-suffix="+">0</div>
+        <div class="stat-l">Years Exp.</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n" data-count="12" data-suffix="+">0</div>
+        <div class="stat-l">AI Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n" data-count="80" data-suffix="%">0</div>
+        <div class="stat-l">MS Speech ↑</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n" style="-webkit-text-fill-color:initial;font-size:2rem">🏆</div>
+        <div class="stat-l">MS Hackathon</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: SKILLS MARQUEE -->
+<section class="skills-marquee-section">
+  <div class="skills-marquee-header reveal">
+    <div class="section-eyebrow">// skill map</div>
+    <h2 class="section-h2">The <span class="grad-text">Cognitive</span> Stack</h2>
+  </div>
+
+  <div class="skills-v-window">
+    <div class="skills-v-track">
+
+      {% for row in skill_rows %}
+      <div class="skills-row" style="--row-color: {{ row.color }}">
+        <div class="skills-row-label">
+          <span class="skills-row-dot"></span>
+          <span class="skills-row-name">{{ row.label }}</span>
+        </div>
+        <div class="skills-marquee-wrap">
+          <div class="skills-marquee-inner {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
+            <div class="skills-track">
+              {% for skill in row.skills %}<span class="skill-pill">{{ skill }}</span>{% endfor %}
+            </div>
+            <div class="skills-track" aria-hidden="true">
+              {% for skill in row.skills %}<span class="skill-pill">{{ skill }}</span>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- Duplicate for seamless vertical loop -->
+      {% for row in skill_rows %}
+      <div class="skills-row" style="--row-color: {{ row.color }}" aria-hidden="true">
+        <div class="skills-row-label">
+          <span class="skills-row-dot"></span>
+          <span class="skills-row-name">{{ row.label }}</span>
+        </div>
+        <div class="skills-marquee-wrap">
+          <div class="skills-marquee-inner {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
+            <div class="skills-track">
+              {% for skill in row.skills %}<span class="skill-pill">{{ skill }}</span>{% endfor %}
+            </div>
+            <div class="skills-track" aria-hidden="true">
+              {% for skill in row.skills %}<span class="skill-pill">{{ skill }}</span>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: FEATURED WORK -->
+<section class="work-section">
+  <div class="work-inner">
+    <div class="section-eyebrow reveal">// featured work</div>
+    <h2 class="section-h2 reveal" style="margin-bottom:3rem">
+      Built to <span class="grad-text">Ship</span>
+    </h2>
+
+    {% for p in featured_projects %}{% if p.id == 'buddy' %}
+    <div class="work-hero reveal glass-card">
+      <div class="work-hero-left">
+        <div class="work-hero-ico">🤖</div>
+        <div class="work-hero-eyebrow">// LLM · Cognitive AI</div>
+        <h3 class="work-hero-title">Buddy<br><span class="grad-text">Offline Cognitive AI</span></h3>
+        <p class="work-hero-desc">{{ p.description.0 }}</p>
+        <p class="work-hero-desc" style="margin-top:.7rem">{{ p.description.1 }}</p>
+        <div class="tags" style="margin:1.5rem 0">
+          {% for t in p.tech_stack|slice:":6" %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+        <a href="https://github.com/Mysterious-Harsh/Project_Buddy" target="_blank" rel="noopener"
+           class="btn-primary" style="align-self:flex-start"><span>View on GitHub →</span></a>
+      </div>
+      <div class="work-hero-right">
+        <div class="work-hero-img-wrap">
+          <img src="https://opengraph.githubassets.com/1/Mysterious-Harsh/Project_Buddy"
+               alt="Buddy project" loading="lazy" onerror="this.style.display='none'">
+          <div class="work-hero-overlay">
+            <div class="work-hero-stat"><span class="whs-n">100%</span><span class="whs-l">Offline — no API keys</span></div>
+            <div class="work-hero-stat"><span class="whs-n">RAG</span><span class="whs-l">Memory system</span></div>
+            <div class="work-hero-stat"><span class="whs-n">RTX</span><span class="whs-l">GPU accelerated</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}{% endfor %}
+
+    <div class="work-duo">
+
+      {% for p in featured_projects %}{% if p.id == 'auto-resume-builder' %}
+      <div class="work-card glass-card reveal d1">
+        <div class="work-card-top">
+          <span class="work-card-ico">📄</span>
+          <span class="work-card-cat">LLM · RAG</span>
+        </div>
+        <h3 class="work-card-title">Auto-Resume Builder</h3>
+        <p class="work-card-desc">{{ p.description.0 }}</p>
+        <div class="tags" style="margin:1rem 0">
+          {% for t in p.tech_stack|slice:":4" %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+        <a href="https://github.com/Mysterious-Harsh/Auto_Resume_Builder"
+           target="_blank" rel="noopener" class="proj-link">View on GitHub →</a>
+      </div>
+      {% endif %}{% endfor %}
+
+      {% for p in featured_projects %}{% if p.id == 'speech-emotion-recognition' %}
+      <div class="work-card glass-card reveal d2">
+        <div class="work-card-top">
+          <span class="work-card-ico">🎤</span>
+          <span class="work-card-cat">Deep Learning</span>
+        </div>
+        <h3 class="work-card-title">Speech Emotion Recognition</h3>
+        <p class="work-card-desc">{{ p.description.0 }}</p>
+        <div class="tags" style="margin:1rem 0">
+          {% for t in p.tech_stack|slice:":4" %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+        <a href="https://github.com/Mysterious-Harsh/Real_Time_Speech_Emotion_Recognition"
+           target="_blank" rel="noopener" class="proj-link">View on GitHub →</a>
+      </div>
+      {% endif %}{% endfor %}
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <a href="{% url 'core:projects' %}" class="btn-ghost">All Projects →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 5: CAREER HIGHLIGHTS -->
+<section class="career-section">
+  <div class="career-inner">
+    <div class="section-eyebrow reveal">// career</div>
+    <h2 class="section-h2 reveal" style="margin-bottom:3rem">
+      Where I've <span class="grad-text">Made Impact</span>
+    </h2>
+
+    <div class="career-cards">
+      {% for ch in data.homepage.career_highlights %}
+      <div class="career-card glass-card reveal d{{ forloop.counter }}" style="--ch-color:{{ ch.color }}">
+        <div class="career-card-top">
+          <div class="career-stat">{{ ch.stat }}</div>
+          <div class="career-stat-label">{{ ch.stat_label }}</div>
+        </div>
+        <div class="career-card-body">
+          <div class="career-company">{{ ch.company }}</div>
+          <div class="career-role">{{ ch.role }}</div>
+          <div class="career-period">{{ ch.period }}</div>
+          <p class="career-detail">{{ ch.detail }}</p>
+        </div>
+        <div class="career-card-glow"></div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align:center;margin-top:3rem">
+      <a href="{% url 'core:experience' %}" class="btn-ghost">Full Timeline →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: CONTACT CTA -->
+<section class="cta-section reveal">
+  <div class="cta-section-inner">
+    <div class="cta-grid-bg" aria-hidden="true"></div>
+    <div class="cta-section-eyebrow">// let's build</div>
+    <h2 class="cta-section-h">
+      Got an AI problem<br>to <span class="grad-text">solve?</span>
+    </h2>
+    <p class="cta-section-sub">
+      Open to freelance AI projects, full-time roles,<br>
+      or a great conversation about LLMs.
+    </p>
+    <div class="cta-section-btns">
+      <a href="{% url 'core:contact' %}" class="btn-primary"><span>Get In Touch →</span></a>
+      <a href="mailto:{{ data.email }}" class="btn-ghost">{{ data.email }}</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

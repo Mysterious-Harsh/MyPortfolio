@@ -1,0 +1,336 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Projects — Harshkumar Patel{% endblock %}
+{% block meta_desc %}12+ AI projects spanning LLMs, deep learning, computer vision, data analysis, and full-stack applications.{% endblock %}
+
+{% block content %}
+
+<!-- ══ PAGE HERO ═════════════════════════════════════════════ -->
+<section class="proj-hero section">
+  <div class="section-eyebrow reveal">// project archive</div>
+  <h1 class="proj-hero-h reveal d1">
+    Built with <span class="grad-text">Intelligence.</span>
+  </h1>
+  <p class="proj-hero-sub reveal d2">
+    {{ data.projects|length }}+ projects across LLMs, deep learning, computer vision, and full-stack AI.
+    Every line written for the real world.
+  </p>
+</section>
+
+<!-- ══ FILTER BAR ════════════════════════════════════════════ -->
+<div class="filter-wrap section" style="padding-top:0;padding-bottom:2rem">
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    {% for key, meta in cat_meta.items %}
+    <button class="filter-btn" data-filter="{{ key }}" style="--fc:{{ meta.color }}">
+      {{ meta.icon }} {{ meta.label }}
+    </button>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- ══ PROJECTS GRID ═════════════════════════════════════════ -->
+<div class="section" style="padding-top:0">
+  <div class="proj-grid" id="proj-grid">
+    {% for project in data.projects %}
+    <div class="proj-wrap reveal" data-category="{{ project.category }}">
+      <div class="proj-card glass-card tile"
+           data-pid="{{ project.id }}"
+           style="--pc:{{ project.meta.color }}; cursor:pointer;">
+
+        <!-- Card header -->
+        <div class="proj-card-top">
+          <div class="proj-cat-badge" style="--pc:{{ project.meta.color }}">
+            {{ project.meta.icon }} {{ project.meta.label }}
+          </div>
+          <div class="proj-actions">
+            {% if project.github %}
+            <a href="{{ project.github }}" target="_blank" rel="noopener"
+               class="proj-icon-btn" title="View on GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            {% endif %}
+            {% if project.demo %}
+            <a href="{{ project.demo }}" target="_blank" rel="noopener"
+               class="proj-icon-btn" title="Live Demo">↗</a>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Title & desc -->
+        <h3 class="proj-title">{{ project.name }}</h3>
+        <p class="proj-desc">{{ project.description.0 }}</p>
+
+        <!-- Tech stack -->
+        <div class="proj-tech">
+          {% for tech in project.tech_stack|slice:":5" %}
+          <span class="proj-tech-pill">{{ tech }}</span>
+          {% endfor %}
+          {% if project.tech_stack|length > 5 %}
+          <span class="proj-tech-pill proj-tech-more">+{{ project.tech_stack|length|add:"-5" }}</span>
+          {% endif %}
+        </div>
+
+        <!-- Hover preview panel -->
+        {% if project.github or project.image_url %}
+        <div class="proj-preview">
+          <div class="proj-preview-img-wrap">
+            {% if project.image_url %}
+            <img src="{{ project.image_url }}" alt="{{ project.name }}" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('no-img')"/>
+            {% elif project.github %}
+            <img src="https://opengraph.githubassets.com/1/Mysterious-Harsh/{{ project.github|slice:"44:" }}"
+                 alt="{{ project.name }}" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('no-img')"/>
+            {% endif %}
+            <div class="proj-preview-overlay">
+              <div class="proj-preview-name">{{ project.name }}</div>
+              <a href="{{ project.github }}" target="_blank" rel="noopener"
+                 class="proj-preview-link">View on GitHub →</a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- ══ CTA ═══════════════════════════════════════════════════ -->
+<section class="cta-section reveal">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-section-inner">
+    <div class="cta-section-eyebrow">// collaborate</div>
+    <h2 class="cta-section-h">Have a project<br><span class="grad-text">in mind?</span></h2>
+    <p class="cta-section-sub">Let's build something intelligent together.</p>
+    <div class="cta-section-btns">
+      <a href="{% url 'core:contact' %}" class="btn-primary">Start a Conversation →</a>
+      <a href="{% url 'core:experience' %}" class="btn-ghost">View Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECT DETAIL MODAL ══════════════════════════════════ -->
+<div class="proj-modal-overlay" id="proj-modal-overlay" role="dialog" aria-modal="true">
+  <div class="proj-modal" id="proj-modal">
+
+    <!-- Sticky close button — always visible -->
+    <div class="proj-modal-sticky-bar">
+      <button class="proj-modal-close-btn" id="proj-modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <!-- GitHub preview image -->
+    <div class="proj-modal-img-wrap" id="proj-modal-img-wrap">
+      <img class="proj-modal-img" id="proj-modal-img" src="" alt="" loading="lazy"/>
+    </div>
+
+    <!-- Body -->
+    <div class="proj-modal-body">
+      <div class="proj-modal-name" id="proj-modal-name"></div>
+      <div class="proj-modal-badge" id="proj-modal-badge"></div>
+
+      <div class="proj-modal-divider"></div>
+
+      <!-- Tech stack -->
+      <div class="proj-modal-section">
+        <div class="proj-modal-section-label">// tech stack</div>
+        <div class="proj-modal-tech-pills" id="proj-modal-tech"></div>
+      </div>
+
+      <div class="proj-modal-divider"></div>
+
+      <!-- Description -->
+      <div class="proj-modal-section">
+        <div class="proj-modal-section-label">// about this project</div>
+        <ul class="proj-modal-desc" id="proj-modal-desc"></ul>
+      </div>
+
+      <div class="proj-modal-divider"></div>
+
+      <!-- Action buttons -->
+      <div class="proj-modal-btns" id="proj-modal-btns"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Serialize all project data safely for JS -->
+{{ data.projects|json_script:"proj-data" }}
+{{ cat_meta|json_script:"catmeta-data" }}
+
+<script>
+(function() {
+  /* ── Filter bar ─────────────────────────────────────────── */
+  var btns  = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.proj-wrap');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      cards.forEach(function(card) {
+        var match = filter === 'all' || card.dataset.category === filter;
+        card.style.transition = 'opacity .35s ease, transform .35s ease';
+        if (match) {
+          card.style.display = '';
+          requestAnimationFrame(function() {
+            card.style.opacity = '1'; card.style.transform = 'translateY(0)';
+          });
+        } else {
+          card.style.opacity = '0'; card.style.transform = 'translateY(16px)';
+          setTimeout(function() { card.style.display = 'none'; }, 340);
+        }
+      });
+    });
+  });
+
+  /* ── Project data ───────────────────────────────────────── */
+  var PROJECTS  = JSON.parse(document.getElementById('proj-data').textContent);
+  var CAT_META  = JSON.parse(document.getElementById('catmeta-data').textContent);
+  var projMap   = {};
+  PROJECTS.forEach(function(p) { projMap[p.id] = p; });
+
+  /* ── Modal elements ─────────────────────────────────────── */
+  var overlay   = document.getElementById('proj-modal-overlay');
+  var modal     = document.getElementById('proj-modal');
+  var closeBtn  = document.getElementById('proj-modal-close');
+  var imgEl     = document.getElementById('proj-modal-img');
+  var imgWrap   = document.getElementById('proj-modal-img-wrap');
+  var nameEl    = document.getElementById('proj-modal-name');
+  var badgeEl   = document.getElementById('proj-modal-badge');
+  var descEl    = document.getElementById('proj-modal-desc');
+  var techEl    = document.getElementById('proj-modal-tech');
+  var btnsEl    = document.getElementById('proj-modal-btns');
+
+  /* ── Open / close ───────────────────────────────────────── */
+  function openModal(pid) {
+    var p = projMap[pid];
+    if (!p) return;
+    var meta = CAT_META[p.category] || { label: p.category, color: '#818CF8', icon: '✦' };
+
+    /* Image — reset state first, then load */
+    imgEl.onerror = null;
+    imgEl.src     = '';
+    imgEl.alt     = p.name;
+    imgEl.style.display = 'block';
+    var ph = imgWrap.querySelector('.proj-modal-img-placeholder');
+    if (ph) ph.style.display = 'none';
+
+    if (p.image_url) {
+      /* Local image from resources/ — highest priority */
+      imgEl.onerror = function() { imgEl.onerror = null; showImgPlaceholder(); };
+      imgEl.src = p.image_url;
+    } else if (p.github) {
+      /* Fallback: GitHub Open Graph preview */
+      var repo = p.github.replace(/\/$/, '').split('/').pop();
+      imgEl.onerror = function() { imgEl.onerror = null; showImgPlaceholder(); };
+      imgEl.src = 'https://opengraph.githubassets.com/1/Mysterious-Harsh/' + repo;
+    } else {
+      imgEl.style.display = 'none';
+      showImgPlaceholder();
+    }
+
+    /* Name */
+    nameEl.textContent = p.name;
+
+    /* Category badge */
+    badgeEl.textContent = meta.icon + ' ' + meta.label;
+    badgeEl.style.color       = meta.color;
+    badgeEl.style.borderColor = meta.color;
+    badgeEl.style.background  = hexToRgba(meta.color, 0.1);
+
+    /* Description bullets */
+    descEl.innerHTML = '';
+    (p.description || []).forEach(function(line) {
+      var li = document.createElement('li');
+      li.textContent = line;
+      descEl.appendChild(li);
+    });
+
+    /* Tech stack */
+    techEl.innerHTML = '';
+    (p.tech_stack || []).forEach(function(t) {
+      var span = document.createElement('span');
+      span.className = 'proj-modal-tech-pill';
+      span.textContent = t;
+      techEl.appendChild(span);
+    });
+
+    /* Action buttons */
+    btnsEl.innerHTML = '';
+    if (p.github) {
+      var gh = document.createElement('a');
+      gh.href = p.github; gh.target = '_blank'; gh.rel = 'noopener';
+      gh.className = 'btn-primary';
+      gh.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub';
+      btnsEl.appendChild(gh);
+    }
+    if (p.demo) {
+      var dm = document.createElement('a');
+      dm.href = p.demo; dm.target = '_blank'; dm.rel = 'noopener';
+      dm.className = 'btn-ghost';
+      dm.textContent = 'Live Demo ↗';
+      btnsEl.appendChild(dm);
+    }
+
+    /* Show */
+    modal.scrollTop = 0;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function() { imgEl.onerror = null; imgEl.src = ''; }, 400);
+  }
+
+  function showImgPlaceholder() {
+    imgEl.style.display = 'none';
+    var ph = imgWrap.querySelector('.proj-modal-img-placeholder');
+    if (!ph) {
+      ph = document.createElement('div');
+      ph.className = 'proj-modal-img-placeholder';
+      ph.innerHTML = '<span>// no preview available</span>';
+      imgWrap.appendChild(ph);
+    }
+    ph.style.display = 'flex';
+  }
+
+  /* ── Helpers ────────────────────────────────────────────── */
+  function hexToRgba(hex, alpha) {
+    var r = parseInt(hex.slice(1,3),16);
+    var g = parseInt(hex.slice(3,5),16);
+    var b = parseInt(hex.slice(5,7),16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  }
+
+  /* ── Event listeners ────────────────────────────────────── */
+  /* Click any project card */
+  document.querySelectorAll('.proj-card[data-pid]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      /* Don't open modal when clicking GitHub/demo icon buttons */
+      if (e.target.closest('.proj-icon-btn')) return;
+      openModal(card.dataset.pid);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  /* Click outside modal to close */
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  /* ESC to close */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+}());
+</script>
+
+{% endblock %}

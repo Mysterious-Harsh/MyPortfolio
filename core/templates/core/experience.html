@@ -1,0 +1,109 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Experience — Harshkumar Patel{% endblock %}
+{% block meta_desc %}6+ years of AI engineering experience across Microsoft, DataAnnotation, and independent AI development. Full career timeline.{% endblock %}
+
+{% block content %}
+
+<!-- ══ PAGE HERO ═════════════════════════════════════════════ -->
+<section class="section exp-hero">
+  <div class="section-eyebrow reveal">// career timeline</div>
+  <h1 class="exp-hero-h reveal d1">
+    Building AI<br><span class="grad-text">Since 2019.</span>
+  </h1>
+  <p class="exp-hero-sub reveal d2">
+    From deep learning internships to Microsoft research — a journey of building systems
+    that reason, remember, and act.
+  </p>
+
+  <!-- Quick stats strip -->
+  <div class="exp-quick-stats reveal d3">
+    <div class="exp-qs">
+      <div class="exp-qs-val grad-text">{{ data.experiences|length }}</div>
+      <div class="exp-qs-lbl">Roles</div>
+    </div>
+    <div class="exp-qs-sep"></div>
+    <div class="exp-qs">
+      <div class="exp-qs-val grad-text">6+</div>
+      <div class="exp-qs-lbl">Years</div>
+    </div>
+    <div class="exp-qs-sep"></div>
+    <div class="exp-qs">
+      <div class="exp-qs-val grad-text">3</div>
+      <div class="exp-qs-lbl">Countries</div>
+    </div>
+    <div class="exp-qs-sep"></div>
+    <div class="exp-qs">
+      <div class="exp-qs-val grad-text">🏆</div>
+      <div class="exp-qs-lbl">MS Hackathon</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TIMELINE ══════════════════════════════════════════════ -->
+<section class="section exp-timeline-section" style="padding-top:0">
+
+  <div class="exp-timeline">
+    {% for exp in data.experiences %}
+    <div class="exp-item reveal">
+
+      <!-- Connector dot -->
+      <div class="exp-dot" style="--ec:{{ exp.type_color }}">
+        <div class="exp-dot-inner"></div>
+      </div>
+
+      <!-- Card -->
+      <div class="exp-card glass-card tile" style="--ec:{{ exp.type_color }}">
+
+        <div class="exp-card-top">
+          <div class="exp-date-badge">
+            <span class="exp-date-mono">{{ exp.start_date }} — {{ exp.end_date }}</span>
+          </div>
+          <span class="exp-type-badge" style="--ec:{{ exp.type_color }}">{{ exp.type }}</span>
+        </div>
+
+        <h2 class="exp-position">{{ exp.position }}</h2>
+        <div class="exp-company-row">
+          <span class="exp-company" style="color:{{ exp.type_color }}">{{ exp.company }}</span>
+          <span class="exp-location">📍 {{ exp.location }}</span>
+        </div>
+
+        <!-- Tech stack -->
+        <div class="exp-tech-pills">
+          {% for tech in exp.tech_stack %}
+          <span class="exp-tech-pill" style="--ec:{{ exp.type_color }}">{{ tech }}</span>
+          {% endfor %}
+        </div>
+
+        <!-- Description -->
+        <ul class="exp-desc">
+          {% for bullet in exp.description %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+
+        <!-- Accent glow -->
+        <div class="exp-card-glow"></div>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+<!-- ══ CTA ═══════════════════════════════════════════════════ -->
+<section class="cta-section reveal">
+  <div class="cta-grid-bg"></div>
+  <div class="cta-section-inner">
+    <div class="cta-section-eyebrow">// what's next</div>
+    <h2 class="cta-section-h">Let's write the<br><span class="grad-text">next chapter.</span></h2>
+    <p class="cta-section-sub">Looking for a senior AI engineer or a technical co-founder? Let's talk.</p>
+    <div class="cta-section-btns">
+      <a href="{% url 'core:contact' %}" class="btn-primary">Get In Touch →</a>
+      <a href="{% static data.resume %}" download class="btn-ghost">Download Resume ↓</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

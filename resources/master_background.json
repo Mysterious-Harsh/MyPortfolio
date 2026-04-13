@@ -1,0 +1,714 @@
+{
+  "name": "Harshkumar Patel",
+  "email": "Theharsh1@outlook.com",
+  "location": "Saint John, NB, Canada",
+  "linkedin": "https://www.linkedin.com/in/HarshPatel31/",
+  "github": "https://github.com/Mysterious-Harsh",
+  "resume": "resources/Harshkumar_Patel_Resume.pdf",
+  "summary": "I'm an AI Engineer who builds systems that don't just process data — they reason, remember, and act. From architecting Buddy, a fully offline cognitive AI with human-style memory, to winning Microsoft's Global Hackathon 2023 with a real-time speech system, I bring a rare combination of deep research knowledge and production engineering discipline. I specialize in LLM systems, multi-agent pipelines, and full-stack AI applications — building things that work in the real world, not just in notebooks.",
+  "skills": {
+    "ai_and_llm": [
+      "LLM Deployment",
+      "LLM Fine-Tuning",
+      "Prompt Engineering",
+      "Context Engineering",
+      "RAG",
+      "Vector Search",
+      "Embeddings",
+      "Tool Calling",
+      "Structured JSON Outputs",
+      "LangChain",
+      "ChromaDB",
+      "Qdrant"
+    ],
+    "deep_learning": [
+      "PyTorch",
+      "TensorFlow",
+      "Keras",
+      "LSTM",
+      "CNN",
+      "Transformers",
+      "CLIP (Multimodal)",
+      "Backpropagation",
+      "Gradient Optimization",
+      "Transfer Learning"
+    ],
+    "machine_learning": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "NLP",
+      "NLTK",
+      "Feature Engineering",
+      "Predictive Modelling",
+      "Model Evaluation",
+      "Data Analysis",
+      "Data Visualization",
+      "Scikit-Learn",
+      "XGBoost"
+    ],
+    "computer_vision": [
+      "OpenCV",
+      "YOLOv5",
+      "YOLOv3",
+      "Object Detection",
+      "Image Processing",
+      "Real-Time Inference"
+    ],
+    "backend_and_databases": [
+      "Django",
+      "Flask",
+      "REST API",
+      "MySQL",
+      "MariaDB",
+      "SQLite",
+      "MongoDB",
+      "Oracle",
+      "SQL Server",
+      "Neo4J"
+    ],
+    "cloud_and_devops": [
+      "Azure",
+      "AWS",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "MLflow",
+      "Apache Spark",
+      "Heroku"
+    ],
+    "programming_languages": [
+      "Python",
+      "R",
+      "SQL",
+      "Java",
+      "C++",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "software_engineering": [
+      "OOP",
+      "SOLID Principles",
+      "Design Patterns",
+      "TDD",
+      "asyncio",
+      "threading",
+      "Agile"
+    ],
+    "data_visualization": [
+      "Tableau",
+      "Power BI",
+      "Excel",
+      "ECharts",
+      "Matplotlib",
+      "Seaborn"
+    ],
+    "web_scraping": [
+      "Selenium",
+      "Scrapy",
+      "Requests",
+      "BeautifulSoup"
+    ]
+  },
+  "education": [
+    {
+      "degree": "Postgraduate Diploma",
+      "field": "Artificial Intelligence & Machine Learning",
+      "institution": "Lambton College",
+      "location": "Toronto, ON",
+      "start_date": "Jan 2022",
+      "end_date": "Sept 2023",
+      "gpa": "3.25 / 4"
+    },
+    {
+      "degree": "Bachelor of Engineering",
+      "field": "Computer Engineering",
+      "institution": "Gujarat Technological University",
+      "location": "India",
+      "start_date": "Aug 2016",
+      "end_date": "Aug 2020",
+      "gpa": "8.25 / 10"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Machine Learning Specialization",
+      "issuer": "Stanford University / Coursera",
+      "date": ""
+    },
+    {
+      "name": "Deep Learning Specialization",
+      "issuer": "Stanford University / Coursera",
+      "date": ""
+    },
+    {
+      "name": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+      "issuer": "Coursera",
+      "date": "Nov 2022"
+    },
+    {
+      "name": "Ethical Hacking & Cyber Security",
+      "issuer": "Pristine Info-Solution",
+      "date": ""
+    }
+  ],
+  "experiences": [
+    {
+      "position": "Independent AI & Web Developer",
+      "company": "Self-Employed",
+      "location": "Saint John, NB",
+      "type": "Freelance",
+      "start_date": "July 2025",
+      "end_date": "Present",
+      "tech_stack": [
+        "Python",
+        "LLMs",
+        "RAG",
+        "LangChain",
+        "Django",
+        "React",
+        "REST API",
+        "Vector Databases"
+      ],
+      "description": [
+        "Leveraged SQL and Python to extract, cleanse, and analyze large-scale operational datasets, identifying 5 critical KPIs that directly elevated strategic business alignment by 20%.",
+        "Boosted data processing time by 40% through the extensive use of Python data manipulation libraries (Pandas, NumPy) and highly optimized SQL queries on relational databases.",
+        "Boosted reporting efficiency by 25% by designing and automating end-to-end data extraction, transformation, and loading (ETL) pipelines, replacing manual reporting processes.",
+        "Developed 10+ interactive Tableau dashboards visualizing KPIs, revenue trends, inventory metrics, and financial performance, improving executive decision-making speed by 30%.",
+        "Performed root cause analysis on data quality issues, implementing validation checks and cleansing routines that significantly reduced downstream reporting errors.",
+        "Collaborated with operations, finance, and management teams to translate business questions into data queries and actionable analytical insights.",
+        "Built predictive models to forecast demand and inventory needs, enabling procurement teams to reduce overstock costs and improve supply chain efficiency.",
+        "Established standardized data documentation and reporting templates, reducing onboarding time for new analysts and improving cross-team data consistency.",
+        "Presented data findings and strategic recommendations to non-technical stakeholders through clear visualizations and concise executive summaries.",
+        "Supported ad-hoc analytical requests from leadership, consistently delivering accurate, timely insights that informed pricing, operations, and growth strategies."
+      ]
+    },
+    {
+      "position": "AI Coding Trainer",
+      "company": "DataAnnotation.tech",
+      "location": "Remote",
+      "type": "Freelance",
+      "start_date": "Jan 2024",
+      "end_date": "June 2025",
+      "tech_stack": [
+        "Python",
+        "Prompt Engineering",
+        "AI Evaluation",
+        "RLHF",
+        "Algorithms",
+        "Data Structures"
+      ],
+      "description": [
+        "Evaluated and improved AI-generated code responses across multiple programming languages and domains to systematically enhance model accuracy, reliability, and output quality.",
+        "Designed diverse coding prompts, edge-case test scenarios, and benchmark problem sets to train and stress-test AI coding assistants across varying difficulty levels.",
+        "Reviewed AI-generated outputs for correctness, time complexity, memory efficiency, and adherence to industry-standard programming best practices.",
+        "Provided detailed structured feedback and annotation rationales to guide model fine-tuning, resulting in measurable reductions in hallucinations and logic errors.",
+        "Contributed to human-in-the-loop (HITL) workflows critical to reinforcement learning from human feedback (RLHF) pipelines used in modern LLM training.",
+        "Covered a broad range of topics including data structures, algorithms, REST API design, database queries, ML model implementations, and system design problems."
+      ]
+    },
+    {
+      "position": "Research Scientist Intern",
+      "company": "Microsoft (Nuance)",
+      "location": "Montreal, QC",
+      "type": "Internship",
+      "start_date": "Mar 2023",
+      "end_date": "Aug 2023",
+      "tech_stack": [
+        "Python",
+        "GPT-4",
+        "Azure Cognitive Speech Service",
+        "Azure API",
+        "ReactJS",
+        "Gradio",
+        "GitHub Actions",
+        "CI/CD"
+      ],
+      "description": [
+        "Spearheaded the end-to-end implementation of Speech Completion for Microsoft Teams Meetings and PowerPoint Presentations, enhancing productivity for millions of enterprise users.",
+        "Elevated real-time speech recognition accuracy by 80% through the design and integration of advanced neural network architectures optimized for low-latency inference.",
+        "Integrated GPT-4 API for intelligent outcome prediction and contextual speech completion, delivering a seamless user experience through a Gradio-based interactive UI.",
+        "Designed and implemented a CI/CD pipeline using GitHub Actions, reducing deployment failures by 40% and cutting release cycle from 2 days to 1 day.",
+        "Collaborated closely with senior research scientists and cross-functional engineering teams to align the prototype with Microsoft's enterprise speech product roadmap.",
+        "Conducted rigorous performance benchmarking of speech models under real-world conditions, identifying bottlenecks and applying targeted optimizations.",
+        "Awarded Regional Winner at Microsoft Global Hackathon 2023 for developing a real-time speech summarization system that improved meeting accessibility and user productivity."
+      ]
+    },
+    {
+      "position": "Data & Business Analyst",
+      "company": "Welltech Minerals",
+      "location": "India",
+      "type": "Full-Time",
+      "start_date": "May 2020",
+      "end_date": "Sept 2021",
+      "tech_stack": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "Tableau",
+        "Power BI",
+        "Excel"
+      ],
+      "description": [
+        "Leveraged SQL and Python to extract, cleanse, and analyze large-scale operational datasets, identifying 5 critical KPIs that elevated strategic business alignment by 20%.",
+        "Boosted data processing time by 40% through optimized Python data manipulation libraries and highly tuned SQL queries on relational databases.",
+        "Boosted reporting efficiency by 25% by designing and automating end-to-end ETL pipelines, replacing manual reporting processes.",
+        "Developed 10+ interactive Tableau dashboards visualizing KPIs, revenue trends, inventory metrics, and financial performance, improving executive decision-making speed by 30%.",
+        "Built predictive models to forecast demand and inventory needs, enabling procurement teams to reduce overstock costs and improve supply chain efficiency.",
+        "Presented data findings and strategic recommendations to non-technical stakeholders through clear visualizations and concise executive summaries."
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "G Das Industries",
+      "location": "Uganda",
+      "type": "Contract",
+      "start_date": "Feb 2021",
+      "end_date": "Apr 2021",
+      "tech_stack": [
+        "Python",
+        "SQL",
+        "MySQL",
+        "Data Structures"
+      ],
+      "description": [
+        "Independently developed a Python-based costing system, reducing billing workload by 50% and cutting quotation turnaround time from 2 hours to 20 minutes.",
+        "Optimized SQL queries and applied efficient data structures to improve system reliability and response time by 60%.",
+        "Created automated SQL-based stock reports that cut reporting errors by 90%.",
+        "Coordinated with stakeholders to document SOPs and ensure transparency in production processes.",
+        "Delivered fixes under tight deadlines, demonstrating strong incident ownership and problem-solving skills."
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "Shilpee Consultants",
+      "location": "India",
+      "type": "Internship",
+      "start_date": "Jul 2020",
+      "end_date": "Sep 2020",
+      "tech_stack": [
+        "Python",
+        "OOP",
+        "Design Patterns",
+        "SOLID",
+        "Git"
+      ],
+      "description": [
+        "Built 2 secure multi-user applications that increased document processing speed by 40% while meeting strict confidentiality requirements.",
+        "Developed modular codebases using design patterns (Singleton, Chain of Responsibility) and SOLID principles to promote maintainability.",
+        "Led technical design and implementation for two internal productivity tools while maintaining rigorous version control via Git."
+      ]
+    },
+    {
+      "position": "Deep Learning Intern",
+      "company": "SoftVan",
+      "location": "India",
+      "type": "Internship",
+      "start_date": "May 2019",
+      "end_date": "Apr 2020",
+      "tech_stack": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "CNN",
+        "OpenCV",
+        "Flask",
+        "Django",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "description": [
+        "Assisted in training and deploying multiple deep learning models across image classification and text processing tasks, improving classification accuracy from 70% to 92%.",
+        "Trained and evaluated CNN architectures for pattern detection and visual recognition tasks, iteratively improving model accuracy by 90% through architecture tuning and data augmentation.",
+        "Automated monitoring and alerting scripts for image and text processing pipelines, reducing system downtime by 25%.",
+        "Developed and maintained backend services using Flask, Django, and Jinja2, integrating trained models into web-facing applications for real-time inference.",
+        "Built responsive frontend interfaces using HTML, CSS, and JavaScript to present model outputs to end users.",
+        "Participated actively in Agile sprint cycles including code reviews, bug triage, and retrospectives."
+      ]
+    }
+  ],
+  "homepage": {
+    "hero_description": "I build intelligent systems that reason, remember, and act. From offline cognitive AI to multi-agent LLM pipelines — engineering AI that works in the real world.",
+    "typewriter_roles": [
+      "AI Engineer",
+      "LLM Developer",
+      "Deep Learning Engineer",
+      "Cognitive Systems Builder",
+      "Full-Stack AI Developer",
+      "ML Researcher"
+    ],
+    "stats": [
+      {
+        "label": "Years Exp.",
+        "value": 6,
+        "suffix": "+"
+      },
+      {
+        "label": "AI Projects",
+        "value": 12,
+        "suffix": "+"
+      },
+      {
+        "label": "MS Speech ↑",
+        "value": 80,
+        "suffix": "%"
+      },
+      {
+        "label": "MS Hackathon",
+        "value": null,
+        "suffix": "🏆"
+      }
+    ],
+    "career_highlights": [
+      {
+        "company": "Microsoft · Nuance",
+        "role": "Research Scientist Intern",
+        "period": "2023",
+        "stat": "80%",
+        "stat_label": "Speech accuracy improvement",
+        "detail": "Built real-time speech completion for Teams & PowerPoint. Won Regional Hackathon 2023.",
+        "color": "#14F1D9"
+      },
+      {
+        "company": "DataAnnotation.tech",
+        "role": "AI Coding Trainer",
+        "period": "2024 – 2025",
+        "stat": "RLHF",
+        "stat_label": "LLM training pipelines",
+        "detail": "Evaluated and improved AI-generated code to train production LLMs via RLHF workflows.",
+        "color": "#818CF8"
+      },
+      {
+        "company": "Self-Employed",
+        "role": "Independent AI Developer",
+        "period": "2025 → Now",
+        "stat": "E2E",
+        "stat_label": "Production AI systems",
+        "detail": "Building RAG systems, agentic pipelines, and full-stack AI apps for clients globally.",
+        "color": "#4F46E5"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "buddy",
+      "name": "Buddy – Offline Cognitive AI",
+      "category": "llm-ai",
+      "featured": true,
+      "github": "https://github.com/Mysterious-Harsh/Project_Buddy",
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "llama.cpp",
+        "faster-whisper",
+        "Qdrant",
+        "SQL",
+        "REST API",
+        "asyncio",
+        "Prompt Engineering"
+      ],
+      "description": [
+        "Designed and developed Buddy, a fully offline cognitive AI assistant capable of multi-step reasoning, long-term memory recall, and autonomous tool execution without any cloud dependency.",
+        "Built a multi-layer cognitive architecture (Memory Retrieval Gate → Brain → Planner → Tool Executor → Analyzer) enabling structured decision-making, goal decomposition, and intelligent task execution.",
+        "Implemented advanced human-style memory management across three tiers — flash, short-term, and long-term — using SQL for structured storage and Qdrant for semantic similarity-based retrieval.",
+        "Designed a memory consolidation engine that filters, merges, and promotes short-term interactions into structured long-term knowledge using vector similarity scoring and salience weighting.",
+        "Integrated local LLMs via llama.cpp with tuned inference parameters to achieve low-latency, deterministic, structured JSON outputs across multiple model backends.",
+        "Engineered a dynamic tool-calling framework supporting secure shell automation, file system operations, web search, and OS-aware command execution with sandboxed execution.",
+        "Developed a real-time speech interface using faster-whisper for continuous audio capture and transcription — hands-free interaction with no wake word required.",
+        "Applied advanced prompt and context engineering to maximize reasoning depth while minimizing token usage and inference latency on offline hardware."
+      ]
+    },
+    {
+      "id": "auto-resume-builder",
+      "name": "Auto-Resume Builder",
+      "category": "llm-ai",
+      "featured": true,
+      "github": "https://github.com/Mysterious-Harsh/Auto_Resume_Builder",
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "ChromaDB",
+        "LangChain",
+        "Google Gemini API",
+        "RAG",
+        "NLP",
+        "PDF Generation",
+        "Multi-Agent Systems"
+      ],
+      "description": [
+        "Architected an end-to-end multi-agent pipeline comprising 7 specialized agents for automated, ATS-optimized resume generation — orchestrating scraping, semantic retrieval, rephrasing, scoring, and PDF rendering as independent stages.",
+        "Implemented a RAG system using ChromaDB and vector embeddings to semantically index master background data at bullet-point granularity, enabling high-precision experience retrieval against live job descriptions.",
+        "Engineered an NLP-driven ATS scoring agent that computes keyword match percentage between job descriptions and generated resume content, delivering actionable gap-analysis feedback before PDF output.",
+        "Integrated Google Gemini API across rephrasing and analysis agents to rewrite resume bullets with high-density keyword alignment, enforcing human-writing style constraints to minimize AI-detection risk.",
+        "Designed a dynamic PDF generation agent with automatic margin adjustment, font scaling, and line spacing optimization to guarantee consistent single-page compliance with US/Canadian resume standards.",
+        "Implemented a content filtering agent that selects and ranks the most semantically relevant experiences from the master background using cosine similarity scores against the target job description."
+      ]
+    },
+    {
+      "id": "json-repair-doctor",
+      "name": "JSON Repair Doctor",
+      "category": "llm-ai",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/JSON-Repair-Doctor",
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "Regex",
+        "AST Manipulation",
+        "Schema Validation",
+        "Deterministic Parsing"
+      ],
+      "description": [
+        "Designed a fast, deterministic JSON repair engine purpose-built for fixing malformed, AI-generated JSON produced by LLMs, agent planners, tool-calling pipelines, and automation workflows.",
+        "Engineered a robust syntax repair layer covering missing commas, missing colons, trailing commas, adjacent objects, semicolons, and inline comments — converting all to strict valid JSON.",
+        "Implemented comprehensive quote normalization: single-to-double quote conversion, smart quote replacement, unescaped inner quote resolution, broken escape repair, and unterminated string recovery.",
+        "Built schema-guided repair mode for semantic correction — enabling type coercion, missing field injection, and recursive subtree repair driven by a provided schema definition.",
+        "Architected with strict loop-termination guarantees and deterministic execution paths, eliminating infinite loop risks on deeply malformed inputs.",
+        "Designed for production safety with minimal data loss as a core constraint — never silently truncates, drops keys, or alters semantics beyond what is required for valid JSON output."
+      ]
+    },
+    {
+      "id": "smart-product-pricing",
+      "name": "Smart Product Pricing",
+      "category": "deep-learning",
+      "featured": false,
+      "github": null,
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "CLIP (OpenAI)",
+        "Transformers",
+        "Pandas",
+        "NumPy",
+        "Computer Vision",
+        "NLP"
+      ],
+      "description": [
+        "Developed a multimodal deep learning pricing prediction system for a large-scale e-commerce dataset of 75,000 products, leveraging product text, images, and catalog attributes to generate optimal price recommendations.",
+        "Implemented OpenAI's CLIP model to extract rich cross-modal feature embeddings from product images and textual descriptions, enabling unified representation learning across heterogeneous catalog data.",
+        "Engineered end-to-end data preprocessing pipelines handling diverse inputs including raw catalog text, product imagery, and numerical pack quantity attributes at scale.",
+        "Improved model accuracy from a weak baseline to 92% on the held-out test set through systematic feature engineering, architecture selection, and hyperparameter tuning.",
+        "Generated and validated structured prediction outputs (CSV format) for all 75,000 test samples, demonstrating large-scale inference workflow management.",
+        "Benchmarked the CLIP-based multimodal approach against text-only and image-only baselines, quantifying the contribution of each modality to final pricing prediction performance."
+      ]
+    },
+    {
+      "id": "rsad",
+      "name": "RSAD – AI Roadside Anomaly Detection",
+      "category": "computer-vision",
+      "featured": false,
+      "github": null,
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "YOLOv3",
+        "OpenCV",
+        "Tesseract-OCR",
+        "Flask",
+        "MySQL",
+        "SciPy",
+        "Jinja2",
+        "HTML",
+        "CSS"
+      ],
+      "description": [
+        "Designed and developed a full-stack AI-powered road traffic monitoring system capable of detecting multiple traffic violations in real time — wrong-way driving, helmet non-compliance, stop-line crossing, and traffic obstruction.",
+        "Trained and integrated a YOLOv3 object detection model to identify and localize vehicles and riders in live traffic feed frames, enabling frame-by-frame anomaly classification across four distinct violation categories.",
+        "Implemented automatic challan (traffic ticket) generation triggered on violation detection — extracting number plates via OpenCV, performing OCR with Tesseract, and linking to owner records in MySQL.",
+        "Applied OpenCV-based image processing including adaptive thresholding, Canny edge detection, and contour analysis to isolate and extract vehicle number plate regions for downstream OCR.",
+        "Built the backend using Flask with modular blueprint architecture, connecting the YOLOv3 inference engine, OpenCV pipeline, OCR module, and MySQL database into a cohesive application layer.",
+        "Developed role-based web portals for Admin and User access — Admins managing violation records and challan dispatch, Users viewing and responding to issued challans."
+      ]
+    },
+    {
+      "id": "speech-emotion-recognition",
+      "name": "Real-Time Speech Emotion Recognition",
+      "category": "deep-learning",
+      "featured": true,
+      "github": "https://github.com/Mysterious-Harsh/Real_Time_Speech_Emotion_Recognition",
+      "demo": null,
+      "image": "resources/project-speech-emotion.jpg",
+      "tech_stack": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "LSTM",
+        "Librosa",
+        "sounddevice",
+        "NumPy",
+        "scikit-learn"
+      ],
+      "description": [
+        "Trained a multiclass LSTM-based deep learning model to classify seven distinct emotions — Calm, Happy, Angry, Sad, Fearful, Disgust, and Neutral — from raw human speech signals, with an additional gender classification module.",
+        "Extracted multi-dimensional audio features per sample including RMSE, MFCCs, and Mel-Spectrograms using Librosa, providing the LSTM with rich acoustic representations.",
+        "Combined RAVDESS and TESS benchmark datasets for 8,480 labeled audio samples, applying data augmentation (noise injection, pitch shifting, time stretching) to improve generalization.",
+        "Achieved 99.06% training accuracy and 96.84% validation accuracy over 160 epochs with batch size 256, demonstrating strong generalization with minimal overfitting.",
+        "Engineered a real-time detection system using sounddevice for continuous microphone listening, segmenting the audio stream into 2.6-second clips with sub-second prediction latency.",
+        "Built a session summary module that aggregates per-clip emotion predictions to provide users with a statistical breakdown of emotional patterns detected over a full interaction."
+      ]
+    },
+    {
+      "id": "face-mask-detection",
+      "name": "Real-Time Face Mask Detection",
+      "category": "computer-vision",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/Real_Time_Face_Mask_Detection",
+      "demo": null,
+      "image": "resources/project-face-mask.jpg",
+      "tech_stack": [
+        "Python",
+        "YOLOv5",
+        "PyTorch",
+        "OpenCV",
+        "Transfer Learning",
+        "Flask"
+      ],
+      "description": [
+        "Developed a real-time face mask detection system using YOLOv5 capable of classifying three distinct states — Mask, No-Mask, and Improper-Mask — from live webcam feeds and pre-recorded video streams.",
+        "Trained a custom YOLOv5 model on a domain-specific dataset of 853 labeled images, achieving a mean Average Precision (mAP) of 0.85 across all three detection classes.",
+        "Applied data augmentation strategies including mosaic augmentation, random flipping, HSV color jitter, and scale variation to improve robustness across diverse lighting and face orientations.",
+        "Fine-tuned YOLOv5 hyperparameters including learning rate schedules, anchor sizes, and confidence thresholds to optimize precision-recall trade-off for the improper mask class.",
+        "Leveraged transfer learning from YOLOv5's COCO-pretrained weights to accelerate convergence on the small dataset, significantly reducing training time while achieving production-viable accuracy.",
+        "Engineered the detection pipeline to process both real-time webcam input and static video files, enabling flexible deployment across surveillance and compliance monitoring use cases."
+      ]
+    },
+    {
+      "id": "cataract-detection",
+      "name": "Cataract Eye Disease Detection",
+      "category": "computer-vision",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/Cataract_Eye_disease_detection",
+      "demo": null,
+      "image": "resources/Eye.jpeg",
+      "tech_stack": [
+        "Python",
+        "ResNet-50",
+        "EfficientNet",
+        "TensorFlow",
+        "Keras",
+        "Transfer Learning",
+        "OpenCV",
+        "Flask",
+        "HTML",
+        "CSS"
+      ],
+      "description": [
+        "Designed and developed an AI diagnostic system for automated detection of cataract eye diseases from external eye images, targeting early detection to reduce dependency on specialist clinicians.",
+        "Implemented and benchmarked two CNN architectures — ResNet-50 and EfficientNet — for binary classification of normal vs. cataract-affected eyes, evaluating trade-offs in accuracy, speed, and generalization.",
+        "Applied transfer learning by fine-tuning pretrained ImageNet weights on domain-specific eye image data, accelerating convergence and improving performance on limited medical imaging samples.",
+        "Evaluated model performance using clinically relevant metrics including accuracy, sensitivity, specificity, precision, F1-score, and AUC-ROC.",
+        "Integrated the trained model into a user-friendly web application accepting uploaded eye images and returning real-time cataract diagnoses accessible to both medical professionals and patients.",
+        "Demonstrated potential for real-world healthcare impact in regions with limited access to ophthalmologists by providing a scalable, non-invasive, and cost-effective screening tool."
+      ]
+    },
+    {
+      "id": "gender-classifier-voice",
+      "name": "Real-Time Gender Classifier by Voice",
+      "category": "deep-learning",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/Real_Time_Gender_Classifier_By_Voice",
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "LSTM",
+        "Librosa",
+        "sounddevice",
+        "NumPy"
+      ],
+      "description": [
+        "Developed a real-time voice-based gender classification system using LSTM neural networks trained on acoustic features extracted from audio signals.",
+        "Extracted acoustic features per audio sample using Librosa, including MFCCs, chroma features, and spectral contrast, providing the model with rich representations of vocal characteristics.",
+        "Implemented continuous real-time audio capture using sounddevice, processing incoming audio into fixed-length segments for live gender inference with low latency.",
+        "Applied data augmentation including pitch shifting and noise injection to improve model robustness across diverse speaker demographics, microphone types, and recording environments.",
+        "Trained and evaluated the LSTM model on benchmark voice datasets, achieving strong classification accuracy through systematic hyperparameter tuning and architecture optimization.",
+        "Structured the inference pipeline for easy integration into broader speech processing systems, with configurable confidence thresholds and real-time output rendering."
+      ]
+    },
+    {
+      "id": "20-newsgroup",
+      "name": "20 Newsgroup Text Classification",
+      "category": "data-analysis",
+      "featured": false,
+      "github": null,
+      "demo": null,
+      "image": null,
+      "tech_stack": [
+        "Python",
+        "NLTK",
+        "scikit-learn",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "TF-IDF",
+        "NLP"
+      ],
+      "description": [
+        "Built a multi-class text classification system on the 20 Newsgroups benchmark dataset, categorizing news articles across 20 distinct topic categories using classical and modern NLP techniques.",
+        "Applied comprehensive text preprocessing including tokenization, stop-word removal, stemming, and lemmatization using NLTK to clean and normalize raw newsgroup text data.",
+        "Engineered TF-IDF feature representations from preprocessed text, capturing term frequency and document relevance across the full 20-class vocabulary for downstream classification.",
+        "Trained and benchmarked multiple classification algorithms — Naive Bayes, SVM, Logistic Regression, and Random Forest — evaluating performance using accuracy, F1-score, and confusion matrices.",
+        "Conducted exploratory data analysis to identify class imbalances, vocabulary distributions, and cross-category topic overlap, informing preprocessing and model selection decisions.",
+        "Produced a comprehensive analysis report with visualizations documenting the methodology, experimental results, and comparative model performance across all 20 news categories."
+      ]
+    },
+    {
+      "id": "costing-system",
+      "name": "Python Costing & Billing System",
+      "category": "web-fullstack",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/GDAS_Costing_System",
+      "demo": null,
+      "image": "resources/Costing_System.png",
+      "tech_stack": [
+        "Python",
+        "SQL",
+        "MySQL",
+        "Data Structures",
+        "Automation"
+      ],
+      "description": [
+        "Independently designed and developed a Python-based costing and billing system for G Das Industries in Uganda, reducing billing workload by 50% and cutting quotation turnaround time from 2 hours to 20 minutes.",
+        "Optimized SQL queries and applied efficient data structures to improve system reliability and response time by 60%, enabling smooth operation on constrained hardware.",
+        "Created automated SQL-based stock reporting that cut manual reporting errors by 90%, replacing error-prone spreadsheet workflows with reliable automated pipelines.",
+        "Coordinated directly with business stakeholders to gather requirements, document SOPs, and validate system outputs against real production data.",
+        "Delivered the full system under tight deadlines in a resource-constrained environment, demonstrating end-to-end ownership from requirements gathering through deployment."
+      ]
+    },
+    {
+      "id": "chatbot-sarah",
+      "name": "Chatbot Sarah",
+      "category": "llm-ai",
+      "featured": false,
+      "github": "https://github.com/Mysterious-Harsh/Chatbot_Sarah",
+      "demo": null,
+      "image": "resources/Chatbot.png",
+      "tech_stack": [
+        "Python",
+        "NLP",
+        "NLTK",
+        "Speech Recognition",
+        "Text-to-Speech",
+        "JSON"
+      ],
+      "description": [
+        "Designed and developed Sarah, a Python-based multimodal conversational AI supporting text chat, voice input via speech recognition, and voice output via text-to-speech synthesis.",
+        "Built a flexible intent classification engine trained on custom JSON-based training data (intents, patterns, responses, and context), enabling domain-specific conversational customization.",
+        "Implemented voice input processing using Python speech recognition libraries, converting live microphone audio to text and feeding it into the classification pipeline for hands-free interaction.",
+        "Engineered voice output using text-to-speech synthesis, allowing Sarah to respond audibly — supporting natural two-way spoken conversations without requiring a GUI.",
+        "Designed a configurable knowledge base architecture where conversation domains, response sets, and context rules are fully defined in external JSON files — enabling zero-code knowledge updates.",
+        "Structured the system with clean separation between the NLP classification engine, voice I/O layer, and knowledge base, allowing independent extension of each component."
+      ]
+    }
+  ]
+}

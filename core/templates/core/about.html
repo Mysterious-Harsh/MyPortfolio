@@ -1,0 +1,257 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}About — Harshkumar Patel{% endblock %}
+{% block meta_desc %}AI Engineer specializing in LLMs, RAG, and cognitive AI. Background, education, and full skill set.{% endblock %}
+
+{% block content %}
+
+<!-- ══ HERO ═══════════════════════════════════════════════════ -->
+<section class="about-hero">
+  <div class="about-hero-inner section">
+
+    <!-- Left: text -->
+    <div class="about-hero-text">
+      <div class="page-eyebrow reveal">// about.me</div>
+
+      <h1 class="about-hero-h reveal d1">
+        I build AI<br>that <span class="grad-text">thinks.</span>
+      </h1>
+
+      <p class="about-hero-bio reveal d2">{{ data.summary }}</p>
+
+      <div class="about-hero-btns reveal d3">
+        <a href="{% static data.resume %}" download class="btn-primary">Download Resume ↓</a>
+        <a href="{% url 'core:contact' %}" class="btn-ghost">Get In Touch →</a>
+      </div>
+    </div>
+
+    <!-- Right: identity card -->
+    <div class="about-id-card glass-card reveal d2">
+
+      <!-- Avatar + name -->
+      <div class="aic-top">
+        <div class="aic-avatar">HP</div>
+        <div class="aic-name-block">
+          <div class="aic-name">Harshkumar Patel</div>
+          <div class="aic-title">AI Engineer</div>
+        </div>
+      </div>
+
+      <!-- 4 stats -->
+      <div class="aic-stats">
+        <div class="aic-stat">
+          <div class="aic-num grad-text">6+</div>
+          <div class="aic-lbl">Years Exp.</div>
+        </div>
+        <div class="aic-stat">
+          <div class="aic-num grad-text">12+</div>
+          <div class="aic-lbl">AI Projects</div>
+        </div>
+        <div class="aic-stat">
+          <div class="aic-num grad-text">80%</div>
+          <div class="aic-lbl">Accuracy ↑</div>
+        </div>
+        <div class="aic-stat">
+          <div class="aic-num" style="font-size:1.6rem">🏆</div>
+          <div class="aic-lbl">MS Hackathon</div>
+        </div>
+      </div>
+
+      <div class="aic-divider"></div>
+
+      <!-- Info rows -->
+      <div class="aic-info">
+        <div class="aic-info-row">
+          <span class="aic-key">Location</span>
+          <span class="aic-val">Saint John, NB 🇨🇦</span>
+        </div>
+        <div class="aic-info-row">
+          <span class="aic-key">Status</span>
+          <span class="aic-avail"><span class="aic-dot"></span>Available for hire</span>
+        </div>
+        <div class="aic-info-row">
+          <span class="aic-key">Currently</span>
+          <span class="aic-val">Independent AI Developer</span>
+        </div>
+        <div class="aic-info-row">
+          <span class="aic-key">Focus</span>
+          <span class="aic-val">LLM · RAG · Full-Stack AI</span>
+        </div>
+        <div class="aic-info-row">
+          <span class="aic-key">Education</span>
+          <span class="aic-val">AI &amp; ML · Lambton College</span>
+        </div>
+        <div class="aic-info-row">
+          <span class="aic-key">Email</span>
+          <a href="mailto:{{ data.email }}" class="aic-link">{{ data.email }}</a>
+        </div>
+      </div>
+
+      <div class="aic-divider"></div>
+
+      <!-- Social links -->
+      <div class="aic-social-row">
+        <a href="{{ data.github }}" target="_blank" rel="noopener" class="aic-social-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="{{ data.linkedin }}" target="_blank" rel="noopener" class="aic-social-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="aic-divider"></div>
+
+      <!-- Top skills -->
+      <div class="aic-skills-strip">
+        <div class="aic-skills-label">// top skills</div>
+        <div class="aic-skills-pills">
+          <span class="aic-skill-pill">LLM Deployment</span>
+          <span class="aic-skill-pill">RAG Pipelines</span>
+          <span class="aic-skill-pill">PyTorch</span>
+          <span class="aic-skill-pill">LangChain</span>
+          <span class="aic-skill-pill">Computer Vision</span>
+          <span class="aic-skill-pill">Django</span>
+          <span class="aic-skill-pill">Azure</span>
+          <span class="aic-skill-pill">Docker</span>
+          <span class="aic-skill-pill">Transformers</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS MATRIX ═════════════════════════════════════════ -->
+<section class="section about-skills">
+  <div class="section-eyebrow reveal">// skill matrix</div>
+  <h2 class="section-h2 reveal d1">The <span class="grad-text">Cognitive</span> Stack</h2>
+  <p class="about-section-sub reveal d2">Every tool in the arsenal — from raw tensors to production APIs.</p>
+
+  <div class="sm-grid">
+
+    {% with cats=data.skills %}
+    <div class="sm-card glass-card tile reveal d1" style="--smc:#14F1D9">
+      <div class="sm-head"><span class="sm-ico">🧠</span><h3 class="sm-title">LLM &amp; AI</h3></div>
+      <div class="sm-pills">{% for s in cats.ai_and_llm %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d2" style="--smc:#818CF8">
+      <div class="sm-head"><span class="sm-ico">⚡</span><h3 class="sm-title">Deep Learning</h3></div>
+      <div class="sm-pills">{% for s in cats.deep_learning %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d3" style="--smc:#9B5DE5">
+      <div class="sm-head"><span class="sm-ico">📐</span><h3 class="sm-title">Machine Learning</h3></div>
+      <div class="sm-pills">{% for s in cats.machine_learning %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d1" style="--smc:#34D399">
+      <div class="sm-head"><span class="sm-ico">👁</span><h3 class="sm-title">Computer Vision</h3></div>
+      <div class="sm-pills">{% for s in cats.computer_vision %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d2" style="--smc:#4F46E5">
+      <div class="sm-head"><span class="sm-ico">🔧</span><h3 class="sm-title">Backend &amp; Databases</h3></div>
+      <div class="sm-pills">{% for s in cats.backend_and_databases %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d3" style="--smc:#60A5FA">
+      <div class="sm-head"><span class="sm-ico">☁️</span><h3 class="sm-title">Cloud &amp; DevOps</h3></div>
+      <div class="sm-pills">{% for s in cats.cloud_and_devops %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d1" style="--smc:#14F1D9">
+      <div class="sm-head"><span class="sm-ico">💻</span><h3 class="sm-title">Languages</h3></div>
+      <div class="sm-pills">{% for s in cats.programming_languages %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d2" style="--smc:#F59E0B">
+      <div class="sm-head"><span class="sm-ico">📊</span><h3 class="sm-title">Data &amp; Visualization</h3></div>
+      <div class="sm-pills">{% for s in cats.data_visualization %}<span class="sm-pill">{{ s }}</span>{% endfor %}
+        {% for s in cats.web_scraping %}<span class="sm-pill">{{ s }}</span>{% endfor %}
+      </div>
+    </div>
+
+    <div class="sm-card glass-card tile reveal d3" style="--smc:#818CF8">
+      <div class="sm-head"><span class="sm-ico">🏗</span><h3 class="sm-title">Software Engineering</h3></div>
+      <div class="sm-pills">{% for s in cats.software_engineering %}<span class="sm-pill">{{ s }}</span>{% endfor %}</div>
+    </div>
+    {% endwith %}
+
+  </div>
+</section>
+
+<!-- ══ EDUCATION ═════════════════════════════════════════════ -->
+<section class="section about-edu">
+  <div class="section-eyebrow reveal">// education</div>
+  <h2 class="section-h2 reveal d1">Academic <span class="grad-text">Foundation</span></h2>
+
+  <div class="edu-grid">
+    {% for edu in data.education %}
+    <div class="edu-card glass-card tile reveal d{{ forloop.counter }}">
+      <div class="edu-accent-bar" style="--eac:{% if forloop.first %}#14F1D9{% else %}#818CF8{% endif %}"></div>
+      <div class="edu-card-inner">
+        <div class="edu-top-row">
+          <div class="edu-degree-block">
+            <div class="edu-degree-label">{{ edu.degree }}</div>
+            <h3 class="edu-field">{{ edu.field }}</h3>
+          </div>
+          <div class="edu-gpa-block">
+            <div class="edu-gpa-num">{{ edu.gpa }}</div>
+            <div class="edu-gpa-text">GPA</div>
+          </div>
+        </div>
+        <div class="edu-institution">{{ edu.institution }}</div>
+        <div class="edu-bottom-row">
+          <span class="edu-location">📍 {{ edu.location }}</span>
+          <span class="edu-period">{{ edu.start_date }} – {{ edu.end_date }}</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ══ CERTIFICATIONS ════════════════════════════════════════ -->
+<section class="section about-certs">
+  <div class="section-eyebrow reveal">// certifications</div>
+  <h2 class="section-h2 reveal d1">Continuous <span class="grad-text">Learning</span></h2>
+
+  <div class="cert-grid">
+    {% for cert in data.certifications %}
+    <div class="cert-card glass-card tile reveal d{{ forloop.counter }}">
+      <div class="cert-glow"></div>
+      <div class="cert-icon">✦</div>
+      <h3 class="cert-name">{{ cert.name }}</h3>
+      <div class="cert-issuer">{{ cert.issuer }}</div>
+      {% if cert.date %}<div class="cert-date">{{ cert.date }}</div>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ══ BOTTOM CTA ════════════════════════════════════════════ -->
+<section class="about-bottom-cta">
+  <div class="section">
+    <div class="bottom-cta-card glass-card reveal">
+      <div class="cta-grid-bg"></div>
+      <div class="bottom-cta-inner">
+        <div class="page-eyebrow" style="justify-content:center">// next step</div>
+        <h2 class="bottom-cta-h">Ready to <span class="grad-text">build</span> something?</h2>
+        <p class="bottom-cta-sub">Let's talk about your project, your team, or your next big idea.</p>
+        <div class="bottom-cta-btns">
+          <a href="{% url 'core:contact' %}" class="btn-primary">Let's Talk →</a>
+          <a href="{% url 'core:projects' %}" class="btn-ghost">See My Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
