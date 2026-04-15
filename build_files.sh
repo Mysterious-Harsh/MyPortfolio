@@ -6,5 +6,5 @@ npm install
 npm run build
 
 # Collect all static files into staticfiles/
-pip install -r requirements.txt
+pip install --break-system-packages -r requirements.txt
 python3 manage.py collectstatic --noinput
